@@ -1,0 +1,328 @@
+    <%- include("header", {title:"AI", cssFiles:["style.css", "style1200.css", "style1024.css"], jsFiles:["isotope.pkgd.min.js", "header.js", "countUp.js","scroll.js", "slider.js", "select.js", "photoIso.js", "mGnb.js"]}) %>
+    <div id="container">
+        <div class="cont1">
+            <video autoplay muted loop>
+                <source src="/imgs/cont1bg.mp4">
+            </video>
+            <div class="center">
+                <div class="c1LogoWrap">
+                    <img src="/imgs/logo_c1.png">
+                </div>
+                <h2 class="c1Typing"></h2>
+                <div class="btnWrap">
+                    <button onclick="window.location.href='/login'">참가기업 신청</button>
+                    <button onclick="window.location.href='/visitors/pre-regist'">참관객 사전등록</button>
+                </div>
+            </div>
+        </div>
+        <div class="cont2">
+            <div class="center">
+                <h3 class="topText">
+                    부스별 테마 안내
+                </h3>
+                <div class="swiper">
+                    <div class="slider-wrap">
+                        <!-- Additional required wrapper -->
+                        <div class="swiper-slide s5">
+                            <div class="slideText">
+                                <div class="headlineWrap" style="color:#D35BF1">
+                                    <h4>New Wave of Metaverse</h4>
+                                    <h4>Metaverse Show_</h4> 
+                                </div>
+                                <p> 메타버스의 A부터 Z까지, 무한한 확장을
+                                    한 자리에 모두 모았습니다.<br>
+                                    메타버스 산업의 최신 트랜드를<br>
+                                    이번 테크 전시회에서 한눈에 보세요.
+                                </p>
+                                <a href="/intro/booth-maps" class="locationView" style="color:#D35BF1">부스 위치 보기 ▶</a>  
+                            </div> 
+                        </div>
+                        <div class="swiper-slide s0">
+                            <div class="slideText">
+                                <div class="headlineWrap" style="color:#115BFE">
+                                    <h4>Ride the Smart Wave</h4>
+                                    <h4>Smart Tech Show_</h4>
+                                </div>
+                                <p>가장 뜨겁고 새로운 스마트 테크 기술을
+                                    한 자리에 모두 모았습니다.</p><br>
+                                <p>첨단 산업 기술의 최신 트랜드를<br>
+                                    이번 테크 전시회에서 한눈에 보세요.
+                                </p>
+                                <a href="/intro/booth-maps" class="locationView" style="color:#115BFE">부스 위치 보기 ▶</a>    
+                            </div>
+                        </div>
+                        <div class="swiper-slide s1">
+                            <div class="slideText">
+                                <div class="headlineWrap" style="color:#5A5BF9" >
+                                    <h4>AI+X to X+AI</h4>
+                                    <h4>AI&Big Data Show_</h4>    
+                                </div>
+                                <p> 모두가 열광하는 AI & 빅데이터 기술을<br>
+                                    한 자리에 모두 모았습니다.<br><br>
+                                    인공지능산업의 최신 트랜드를<br>
+                                    이번 테크 전시회에서 한눈에 보세요.
+                                </p>
+                                <a href="/intro/booth-maps" class="locationView" style="color:#5A5BF9" >부스 위치 보기 ▶</a>    
+                            </div>
+                        </div>
+                        <div class="swiper-slide s2">
+                            <div class="slideText">
+                                <div class="headlineWrap" style="color:#7E5BF7" >
+                                    <h4>Fresh and Smart Retail</h4>
+                                    <h4>Retail Tech Show_</h4>
+                                </div>
+                                <p>유통 물류 산업의 미래가 될 패러다임을<br>
+                                    한 자리에 모두 모았습니다.
+                                </p>
+                                <br>
+                                <p>스마트 리테일의 최신 트랜드를<br>
+                                    이번 테크 전시회에서 한눈에 보세요.
+                                </p>
+                                <a href="/intro/booth-maps" class="locationView" style="color:#7E5BF7">부스 위치 보기 ▶</a> 
+                            </div>
+                        </div>
+                        <div class="swiper-slide s3">
+                            <div class="slideText">
+                                <div class="headlineWrap" style="color:#9F5BF4">
+                                    <h4>Reaching of Robot Era</h4>
+                                    <h4>Robot Tech Show_</h4>
+                                </div>
+                                <p>차별화된 로봇 테크놀로지의 모든 것을<br>
+                                    한 자리에 모두 모았습니다.<br><br>
+                                    첨단로봇 기술의 최신 트랜드를<br>
+                                    이번 테크 전시회에서 한눈에 보세요.
+                                </p>
+                                <a href="/intro/booth-maps" class="locationView" style="color:#9F5BF4">부스 위치 보기 ▶</a> 
+                            </div>   
+                        </div>
+                        <div class="swiper-slide s4">
+                            <div class="slideText">
+                                <div class="headlineWrap" style="color:#BF5BF2">
+                                    <h4>New Paradigm of Security!</h4>
+                                    <h4>Secu Tech Show_</h4>  
+                                </div>
+                                <p>날이 갈수록 중요해지는 보안 기술들을<br>
+                                    한 자리에 모두 모았습니다.<br><br>
+                                    정보보안 기술의 최신 트랜드를<br>
+                                    이번 테크 전시회에서 한눈에 보세요.
+                                </p>
+                                <a href="/intro/booth-maps" class="locationView" style="color:#BF5BF2">부스 위치 보기 ▶</a>  
+                            </div>
+                        </div>
+                    </div>
+                    <!-- If we need pagination -->
+                    <span class="swiper-pagination">
+                        <div></div>
+                    </span>
+                    <!-- If we need navigation buttons -->
+                    <button class="swiper-button-prev">
+                        <span class="material-symbols-outlined">arrow_back_ios</span>
+                    </button>
+                    <button class="swiper-button-next">
+                        <span class="material-symbols-outlined">arrow_forward_ios</span>
+                    </button>
+                </div>
+                <div class="countings_wrap">
+                    <div class="countings">
+                        <p>참관객</p>
+                        <div>
+                            <span class="number" style="color:#115BFE">0</span><span>명</span>
+                        </div>
+                    </div>
+                    <div class="countings">
+                        <p>참가국</p>
+                        <div>
+                            <span class="number" style="color:#7E5BF7">0</span><span>개국</span>
+                        </div>
+                    </div>
+                    <div class="countings">
+                        <p>참가사</p>
+                        <div>
+                            <span class="number" style="color:#BF5BF2">0</span><span>개</span>
+                        </div>
+                    </div>
+                    <div class="countings">
+                        <p>부스규모</p>
+                        <div>
+                            <span class="number" style="color:#D35BF1">0</span><span>개</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cont3">
+            <div class="center">
+               <h3>다양한 스폰서들과 함께합니다!</h3>
+                <div class="sponserWrap"><!-- 배너 내용 보여질 부분 -->
+                    <div class="ogs"><!--배너 데이터 리스트-->
+                        <a href="#"><img src="/imgs/og_xi.png"></a>
+                        <a href="#"><img src="/imgs/og_uclick.png"></a>
+                        <a href="#"><img src="/imgs/og_suprema.png"></a>
+                        <a href="#"><img src="/imgs/og_supers.png"></a>
+                        <a href="#"><img src="/imgs/og_scaletorch.png"></a>
+                        <a href="#"><img src="/imgs/og_readsp.png"></a>
+                        <a href="#"><img src="/imgs/og_pure.png"></a>
+                        <a href="#"><img src="/imgs/og_nhn_diq.png"></a>
+                        <!--clone-->
+                        <a href="#"><img src="/imgs/og_xi.png"></a>
+                        <a href="#"><img src="/imgs/og_uclick.png"></a>
+                        <a href="#"><img src="/imgs/og_suprema.png"></a>
+                        <a href="#"><img src="/imgs/og_supers.png"></a>
+                        <a href="#"><img src="/imgs/og_scaletorch.png"></a>
+                        <a href="#"><img src="/imgs/og_readsp.png"></a>
+                        <a href="#"><img src="/imgs/og_pure.png"></a>
+                        <a href="#"><img src="/imgs/og_nhn_diq.png"></a>
+                    </div>
+                </div>
+                <div class="sponserWrap"><!-- 배너 내용 보여질 부분 -->
+                    <div class="ogs2"><!--배너 데이터 리스트-->
+                        <a href="#"><img src="/imgs/og_nhn.png"></a>
+                        <a href="#"><img src="/imgs/og_megazone.png"></a>
+                        <a href="#"><img src="/imgs/og_maum.png"></a>
+                        <a href="#"><img src="/imgs/og_intel.png"></a>
+                        <a href="#"><img src="/imgs/og_ieit.png"></a>
+                        <a href="#"><img src="/imgs/og_eviden.png"></a>
+                        <a href="#"><img src="/imgs/og_deltax.png"></a>
+                        <a href="#"><img src="/imgs/og_crowdworks.png"></a>
+                        <!--clone-->
+                        <a href="#"><img src="/imgs/og_nhn.png"></a>
+                        <a href="#"><img src="/imgs/og_megazone.png"></a>
+                        <a href="#"><img src="/imgs/og_maum.png"></a>
+                        <a href="#"><img src="/imgs/og_intel.png"></a>
+                        <a href="#"><img src="/imgs/og_ieit.png"></a>
+                        <a href="#"><img src="/imgs/og_eviden.png"></a>
+                        <a href="#"><img src="/imgs/og_deltax.png"></a>
+                        <a href="#"><img src="/imgs/og_crowdworks.png"></a>
+                    </div>
+                </div>
+                <div class="sponserWrap"><!-- 배너 내용 보여질 부분 -->
+                    <div class="ogs3"><!--배너 데이터 리스트-->
+                        <a href = '#'><img src = "/imgs/spon_logo_ddip.jpg"></a>
+                        <a href = '#'><img src = "/imgs/spon_logo_ggcc.jpg"></a>
+                        <a href = '#'><img src = "/imgs/spon_logo_keit.jpg"></a>
+                        <a href = '#'><img src = "/imgs/spon_logo_kita.jpg"></a>
+                        <a href = '#'><img src = "/imgs/spon_logo_santo.jpg"></a>
+                        <a href = '#'><img src = "/imgs/spon_logo_ddip.jpg"></a>
+                        <a href = '#'><img src = "/imgs/spon_logo_ggcc.jpg"></a>
+                        <a href = '#'><img src = "/imgs/spon_logo_keit.jpg"></a>
+                        <a href = '#'><img src = "/imgs/spon_logo_kita.jpg"></a>
+                        <a href = '#'><img src = "/imgs/spon_logo_santo.jpg"></a>
+                        <!--clone-->
+                        <a href = '#'><img src = "/imgs/spon_logo_ddip.jpg"></a>
+                        <a href = '#'><img src = "/imgs/spon_logo_ggcc.jpg"></a>
+                        <a href = '#'><img src = "/imgs/spon_logo_keit.jpg"></a>
+                        <a href = '#'><img src = "/imgs/spon_logo_kita.jpg"></a>
+                        <a href = '#'><img src = "/imgs/spon_logo_santo.jpg"></a>
+                        <a href = '#'><img src = "/imgs/spon_logo_ddip.jpg"></a>
+                        <a href = '#'><img src = "/imgs/spon_logo_ggcc.jpg"></a>
+                        <a href = '#'><img src = "/imgs/spon_logo_keit.jpg"></a>
+                        <a href = '#'><img src = "/imgs/spon_logo_kita.jpg"></a>
+                        <a href = '#'><img src = "/imgs/spon_logo_santo.jpg"></a>
+                    </div>
+                </div>
+                <div class="joinWrap">
+                    <div class="exhibitWrap">
+                        <div>
+                            <h4>For Exhibitors</h4>
+                            <p>참여하고자 하는 모든 기업인 여러분들을 환영합니다.</p>
+                            <p>박람회 부스 예약 및 문의!</p>
+                            <button>참가문의</button>
+                        </div>
+                    </div>
+                    <div class="visitWrap">
+                        <div>
+                            <h4>For Visiters</h4>
+                            <p>지금 빠르게 사전참여자로 등록하고 무료로 입장하세요.</p>
+                            <p>박람회 참관 사전등록하기!</p>
+                            <button>사전등록</button>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </div>
+        <div class="cont4">
+            <div class="center">
+                <h3>PHOTO ZONE</h3>
+                <ul class="PhotoMenus">
+                    <li data-photos="*" class="on"><a href="#">All</a></li>
+                    <li data-photos=".news"><a href="#">News</a></li>
+                    <li data-photos=".partners"><a href="#">Partners</a></li>
+                </ul>
+                <div class="PhotoWrap">
+                    <div class="all news">
+                        <img src="/imgs/isoimgs/partners07.png">
+                        <div class="hoveredWrap">
+                            <a href="#"><span class="material-symbols-outlined">add</span>More View</a>
+                        </div>
+                    </div>
+                    <div class="all partners">
+                        <img src="/imgs/isoimgs/partners06.png">
+                        <div class="hoveredWrap">
+                            <a href="#"><span class="material-symbols-outlined">add</span>More View</a>
+                        </div>
+                    </div>
+                    <div class="all partners">
+                        <img src="/imgs/isoimgs/news01.png">
+                        <div class="hoveredWrap">
+                            <a href="#"><span class="material-symbols-outlined">add</span>More View</a>
+                        </div>
+                    </div>
+                    <div class="all news">
+                        <img src="/imgs/isoimgs/news04.png">
+                        <div class="hoveredWrap">
+                            <a href="#"><span class="material-symbols-outlined">add</span>More View</a>
+                        </div>
+                    </div>
+                    <div class="all partners">
+                        <img src="/imgs/isoimgs/news02.png">
+                        <div class="hoveredWrap">
+                            <a href="#"><span class="material-symbols-outlined">add</span>More View</a>
+                        </div>
+                    </div>
+                    <div class="all news">
+                        <img src="/imgs/isoimgs/news03.png">
+                        <div class="hoveredWrap">
+                            <a href="#"><span class="material-symbols-outlined">add</span>More View</a>
+                        </div>
+                    </div>
+                    <div class="all partners">
+                        <img src="/imgs/isoimgs/partners04.png">
+                        <div class="hoveredWrap">
+                            <a href="#"><span class="material-symbols-outlined">add</span>More View</a>
+                        </div>
+                    </div>
+                    <div class="all partners">
+                        <img src="/imgs/isoimgs/partners01.png">
+                        <div class="hoveredWrap">
+                            <a href="#"><span class="material-symbols-outlined">add</span>More View</a>
+                        </div>
+                    </div>
+                    <div class="all news">
+                        <img src="/imgs/isoimgs/news05.png">
+                        <div class="hoveredWrap">
+                            <a href="#"><span class="material-symbols-outlined">add</span>More View</a>
+                        </div>
+                    </div>
+                    <div class="all news">
+                        <img src="/imgs/isoimgs/partners02.png">
+                        <div class="hoveredWrap">
+                            <a href="#"><span class="material-symbols-outlined">add</span>More View</a>
+                        </div>
+                    </div>
+                    <div class="all partners">
+                        <img src="/imgs/isoimgs/partners05.png">
+                        <div class="hoveredWrap">
+                            <a href="#"><span class="material-symbols-outlined">add</span>More View</a>
+                        </div>
+                    </div>
+                    <div class="all partners">
+                        <img src="/imgs/isoimgs/partners03.png">
+                        <div class="hoveredWrap">
+                            <a href="#"><span class="material-symbols-outlined">add</span>More View</a>
+                        </div>
+                    </div>     
+                </div>
+            </div>
+        </div>
+    </div>
+    <%- include("footer") %>

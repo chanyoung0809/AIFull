@@ -1,0 +1,72 @@
+<%- include("header", {title:"AI :: 전시회안내 :: 행사장 안내", cssFiles:["subStyle1.css"], jsFiles:[ "header.js", "subMenu.js", "mGnb.js", "boothLocation.js"]}) %>
+    <div id="container">
+        <div class="subCont1">
+            <div class="center">
+                <div class="subMenuWrap">
+                    <h2>전시회 안내</h2>
+                    <ul class="subMenu">
+                        <li><a href="/intro/overview">행사개요</a></li>
+                        <li class="on"><a href="/intro/booth-maps">행사장 안내</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="subCont2">
+            <div class="center">
+                <div class="subContentsWrap">
+                    <h3>행사장 안내</h3>
+                    <div class="mapsWrap">
+                        <!-- <h4>부스 배치도</h4> -->
+                        <div class="mapWrap">
+                            <img style="margin-bottom: 50px; width:100%;" src="/imgs/mapCut.jpg" />
+                            <div class="theme SmartTech">Smart Tech Zone</div>
+                            <div class="theme AiBigData">Ai & Bigdata Zone</div>
+                            <div class="theme RetailTech">Retail Tech Zone</div>
+                            <div class="theme RobotTech">Robot Tech Zone</div>
+                            <div class="theme SecuTech">Security Tech Zone</div>
+                            <div class="theme Metaverse">Metaverse Zone</div>
+                        </div>
+                        <!-- <h6>테마별 부스 위치</h6> -->
+                        <ul class="themeMenu">
+                            <li>
+                                <input type="radio" id="SmartTech" value="SmartTech" name="theme" checked/>
+                                <label for="SmartTech">Smart Tech Zone</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="AiBigData" value="AiBigData" name="theme"/>
+                                <label for="AiBigData">Ai & Bigdata Zone</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="RetailTech" value="RetailTech"  name="theme"/>
+                                <label for="RetailTech">Retail Tech Zone</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="RobotTech" value="RobotTech" name="theme"/>
+                                <label for="RobotTech">Robot Tech Zone</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="SecuTech" value="SecuTech" name="theme"/>
+                                <label for="SecuTech">Security Tech Zone</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="Metaverse" value="Metaverse" name="theme"/>
+                                <label for="Metaverse">Metaverse Zone</label>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>    
+                        <div class="exhibitorsWrap">
+                            <img src="/imgs/ExhibitersCut.jpg">
+                            <div class="theme SmartTech"></div>
+                            <div class="theme AiBigData"></div>
+                            <div class="theme RetailTech"></div>
+                            <div class="theme RobotTech"></div>
+                            <div class="theme SecuTech"></div>
+                            <div class="theme Metaverse"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <%- include("footer") %>

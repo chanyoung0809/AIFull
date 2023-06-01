@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%- title %></title>
+    <link rel="icon" href="/imgs/favlogo.png"/> <!--탭 아이콘-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" /> <!--Google 웹폰트아이콘-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" /> 
+    <!--fontAwsome 웹폰트아이콘-->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@2.0/nanumsquare.css"> 
+    <!--웹폰트-->
+    <%# 전달받은 데이터값의 경우가 0과 같지 않을 때 실행할 조건식 %>
+    <%# 보내준 cssFiles를 누락했을 때까지 고려해서 조건문 %>
+    <% if (cssFiles.length !== 0) { %>
+        <%# 보내준 cssFiles 갯수만큼 반복문 돌려서 link 태그 생성 %>
+       <% cssFiles.forEach((css, idx) => { %>
+            <link rel="stylesheet" href="/css/<%- css %>">
+       <% }) %>
+    <% } %>
+    <%# 전달받은 데이터값의 경우가 0과 같지 않을 때 실행할 조건식 %>
+    <%# 보내준 jsFile를 누락했을 때까지 고려해서 조건문 %>
+    <% if (jsFiles.length !== 0) { %>
+        <%# 보내준 jsFile 갯수만큼 반복문 돌려서 link 태그 생성 %>
+        <% jsFiles.forEach((js, idx) => { %>
+            <script defer src="/js/<%- js %>"></script>
+        <% }) %>
+    <% } %>
+</head>
+<body>
+<div id="header" class="on">
+    <div class="center">
+        <h1 class="logoWrap"><a href="/"><img src="/imgs/logo_white.png"></a></h1>
+        <div class="gnbWrap">
+            <div class="gnbBg"></div>
+            <ul class="gnb">
+                <li>
+                    <a href="/intro/overview">전시회 안내</a>
+                    <ul class="depth2">
+                        <li><a href="/intro/overview">행사개요</a></li>
+                        <li><a href="/intro/booth-maps">행사장 안내</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/exhibitors/intro">참가기업</a>
+                    <ul class="depth2">
+                        <li><a href="/exhibitors/intro">참가안내</a></li>
+                        <li><a href="/exhibitors/sponserships">스폰서쉽 프로그램</a></li>
+                        <li><a href="/login">마이페이지</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/visitors/info">참관객</a>
+                    <ul class="depth2">
+                        <li><a href="/visitors/info">참관안내</a></li>
+                        <li><a href="/visitors/pre-regist">온라인 사전등록</a></li>
+                        <li><a href="/visitors/location">오시는 길</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">미디어</a>
+                    <ul class="depth2">
+                        <li><a href="/media/news">공지사항</a></li>
+                        <li><a href="/media/gallery">갤러리</a></li>
+                    </ul>
+                </li>         
+            </ul>
+        </div>
+        <div class="userGnb">
+            <li><a href='/login'>로그인</a></li>
+            <li>
+                <button class="hbgMenu"><!-- 반응형에서 gnb 사라지고 나타날 햄버거 메뉴 -->
+                    <span class="line one"></span>
+                    <span class="line two"></span>
+                    <span class="line three"></span>
+                </button>
+            </li>
+        </div>
+    </div>
+</div>

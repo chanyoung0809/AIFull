@@ -1,0 +1,413 @@
+@media screen and (max-width:1280px) {
+    #header {
+        .center {
+            width:100%;
+            .logoWrap {
+                margin-left: 20px;
+            }
+            .gnbWrap{ 
+                display: none;
+            }
+            .userGnb {
+                display: flex;
+                margin-right: 20px;
+                > li {
+                    transition: all .5s;
+                    > a {
+                        display: none;
+                    }
+                    .hbgMenu {
+                        display: block;
+                        margin-right: 0px;
+                        cursor: pointer;
+                        z-index: 99;
+                        > .line {
+                            position: absolute;
+                            display: inline-block;
+                            background-color: #FFF;
+                            &.one {
+                                top: 25%;
+                                transform: translate(-50%, -25%);
+                            }
+                            &.two {
+                                top: 50%;
+                                transform: translate(-50%, -50%);
+                            }
+                            &.three {
+                                top: 75%;
+                                transform: translate(-50%, -75%);
+                            }
+                        }
+                        &.clicked {
+                            > .line {
+                                display: inline-block;
+                                background-color: #FFF;
+                                &.one {
+                                    top: 50%;
+                                    left: 50%;
+                                    transform: translate(-50%, -50%) rotate(45deg);
+                                }
+                                &.two {
+                                    top: 50%;
+                                    transform: translate(-50%, -50%) scale(0);
+                                }
+                                &.three {
+                                    top: 50%;
+                                    transform: translate(-50%, -50%) rotate(-45deg);
+                                }
+                            }    
+                        }    
+                    }
+                    
+                }
+            }        
+        }
+        &.on {
+            .center {
+                .userGnb {
+                    > li {
+                        .hbgMenu {
+                            border-color: #333;
+                            > .line {
+                                background-color: #333;
+                            } 
+                        }
+                    }
+                }
+            }
+            
+        }
+    }
+    #container {
+        .cont1 {
+            width:100vw;
+            .center {
+                width: 100%;
+                .c1LogoWrap {
+                    margin-left:40px;
+                    top: calc(-4vh + 37%);
+                    > img {
+                        width:450px;
+                    }
+                }
+                .c1LogoWrap.on {
+                    width:100%;
+                }
+                > h2 {
+                    left:40px;
+                    font-size: 25px;
+                    margin: 150px 0 0px;
+                    top: calc(-4vh + 36%);
+                    &::before {
+                        animation: highlighting 1s ease-out 1.5s forwards;
+                        @keyframes highlighting {
+                            0% {
+                                width: 0px;
+                            }
+                            100% {
+                              width: 550px;
+                            }
+                        }
+                    }
+                    &::after {
+                        height: 25px;
+                    }
+                }
+                .btnWrap {
+                    margin-top: 212px;
+                    margin-left: 40px;
+                    top: calc(-4vh + 35%);
+                }
+            }
+        }
+        .cont2 { 
+            width:100vw;
+            .center {
+                width:100%;
+                .swiper {
+                    margin: 0 auto 60px;
+                    width:90%;
+                    .slider-wrap {
+                        height: calc(768px - 1vw);
+                        .swiper-slide {
+                            background-position: calc(50% + 11vw);
+                            .slideText {
+                                width:27%;
+                                .headlineWrap {
+                                    margin-bottom: 4vw;
+                                    > h4 {
+                                        font-size: calc(20px + 1vw);
+                                        font-weight: 800;
+                                    }
+                                }
+                                > p {
+                                    width: 88%;
+                                    font-size: 15px;
+                                    line-height: 23px;
+                                }
+                            }
+                            .locationView {
+                                left: calc(150px - 6vw);
+                            }
+                        }
+    
+                    }
+                }
+                //카운팅될 영역
+                .countings_wrap {
+                    flex-wrap: wrap;
+                    width:90%;
+                    margin: 0 auto;
+                    .countings {
+                        width:42%;
+                        margin-bottom: 30px;
+                    }
+                }
+            }
+        }
+        .cont3 {
+            display: flex;
+            justify-content: center;
+            background-color: #EEE;
+            width:100vw;
+            .center {
+                width:100%;
+                .sponserWrap {
+                    width:88%;  // 이미지 보여지는 뷰 부분
+                    margin: 0 auto;
+                    .ogs {
+                        width: 600%;
+                        animation-duration: 35s;
+                    }
+                    .ogs2 {
+                        width: 600%;
+                        animation-duration: 35s;
+                    }
+                    .ogs3 {
+                        width: 600%;
+                        animation-duration: 40s;
+                    }
+                }
+                .joinWrap {
+                    width: 88%;
+                    > div {
+                        > div {
+                            width:90%;
+                            > p {
+                                line-height: 30px;
+                                font-size: 15px;
+                            } 
+                        }
+                    }
+                }   
+            }
+        }
+        .cont4 {
+            width:100vw;
+            .center {
+                width:88%;
+                .PhotoWrap {
+                    width:100%;
+                    margin: 0 auto 130px;
+                    .all {
+                        margin:1%;
+                        width:31%;
+                        height:200px;
+                        overflow: hidden;
+                        .hoveredWrap {
+                            > a {
+                                line-height: 1000%;
+                                > span {
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    #footer {
+        width:100%;
+        .center {
+            width:88%;
+        }
+    }
+    .mGnbBg {
+        display: block;
+        right: -100vw;
+        opacity: 0;
+        z-index: -1;
+        width:200vw;
+        height: 100vh;
+        position:fixed;
+        top:0; 
+        background-color: #0008;
+        transition: all .5s ease-in;
+        &.on {
+            opacity: 1;
+            z-index:99;
+            right: 0px;
+        }
+        .mGnbWrap {
+            position: absolute; 
+            background-color: #FFF;
+            width: 250px; 
+            height: 100%;
+            top:0;
+            right:0;
+            transition: all 1s;
+            .closeBtnWrap {
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+                height: 70px;
+                .hbgMenu {
+                    display: block;
+                    margin-right: 20px;
+                    width: 50px;
+                    background-color: #FFF0;
+                    border: 2px solid #333;
+                    border-radius: 8px;
+                    position: relative;
+                    height: 50px;
+                    transition: all .5s;
+                    cursor: pointer;
+                    &:hover{
+                        background-color: #0003;
+                    }
+                    > .line {
+                        background-color: #333;
+                        width: 70%;
+                        height: 5px;
+                        left: 50%;
+                        transition: all 1s;
+                        position: absolute;
+                        display: inline-block;
+                        &.one {
+                            top: 25%;
+                            transform: translate(-50%, -25%);
+                        }
+                        &.two {
+                            top: 50%;
+                            transform: translate(-50%, -50%);
+                        }
+                        &.three {
+                            top: 75%;
+                            transform: translate(-50%, -75%);
+                        }
+                    }
+                    &.clicked {
+                        > .line {
+                            &.one {
+                                top: 50%;
+                                left: 50%;
+                                transform: translate(-50%, -50%) rotate(45deg);
+                            }
+                            &.two {
+                                top: 50%;
+                                transform: translate(-50%, -50%) scale(0);
+                            }
+                            &.three {
+                                top: 50%;
+                                transform: translate(-50%, -50%) rotate(-45deg);
+                            }
+                        }    
+                    }    
+                }
+            }
+            .mGnb {
+                > li {
+                    > a {
+                        display: flex; 
+                        height: 45px; 
+                        text-align: center; 
+                        color:#333; 
+                        font-weight: 700;
+                        justify-content: space-between; 
+                        align-items: center; 
+                        border-top:1px solid #888; 
+                        padding-left: 20px;
+                        padding-right: 50px;
+                        cursor: pointer; 
+                        transition: all .5s;
+                        &:hover {
+                            background:linear-gradient(to right, #1155FE80 ,#d35bf180 70%);
+                            color:#FFF; 
+                            .onoff {
+                                border: 2px solid #FFF;
+                                .line {
+                                    background-color: #FFF;
+                                }
+                            }
+                        }
+                        &.clicked {
+                            background:linear-gradient(to right, #1155FE80 ,#d35bf180 70%);
+                            color:#FFF; 
+                            .onoff {
+                                border: 2px solid #FFF;
+                            }
+                        }
+                        .onoff {
+                            display: block;
+                            width: 25px;
+                            height: 25px;
+                            border-radius: 50%;
+                            position: relative;
+                            border: 2px solid #666;
+                            .line {
+                                display: block; 
+                                width:13px; 
+                                height:2px; 
+                                background-color:#666;
+                                position: absolute; 
+                                transition: all .5s;
+                                &.one {
+                                    left:50%; 
+                                    top:50%; 
+                                    transform: translate(-50%, -50%) rotate(90deg); transition: all .5s;
+                                    &.clicked {
+                                        transform: translate(-50%, -50%) rotate(0deg);
+                                        background-color: #FFF;
+                                    }
+                                }
+                                &.two {
+                                    left:50%; 
+                                    top:50%; 
+                                    transform: translate(-50%, -50%) rotate(180deg); 
+                                    transition: all .5s;
+                                    &.clicked {
+                                        background-color: #FFF;
+                                        transform: translate(-50%) rotate(90deg);
+                                        opacity: 0;
+                                    }
+                                }
+                            }
+                        }
+                    } 
+                    .sub {
+                        height: 0px;
+                        overflow: hidden;
+                        transition: all .5s;
+                        > li {
+                            transition: all .5s;
+                            &:hover {
+                                background:linear-gradient(to right, #1155FE80 ,#d35bf180 70%);
+                                > a {
+                                    color:#FFF;
+                                }
+                            }
+                            > a {
+                                color:#333; 
+                                display: block; 
+                                padding:9px 20px; 
+                                font-size: 13px; 
+                                font-weight: 15px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

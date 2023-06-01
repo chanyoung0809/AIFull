@@ -1,0 +1,114 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+img, video {
+  vertical-align: top;
+}
+
+body {
+  line-height: 1;
+  overflow: hidden;
+  font-family: "NanumSquare", sans-serif;
+  margin: 0 auto;
+}
+
+/*300 400 700 800*/
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+}
+
+ol, ul, li {
+  list-style: none;
+}
+
+.wrap {
+  padding: 25px;
+  height: 100vh;
+  color: #FFF;
+}
+.wrap > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100px;
+}
+.wrap > div > div {
+  overflow-y: hidden;
+  height: 45px;
+}
+.wrap > div > h3 {
+  text-align: center;
+  margin-top: 20px;
+  color: #000;
+  font-weight: 800;
+  font-size: 25px;
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.2);
+}
+.wrap > label {
+  display: block;
+  margin-bottom: 15px;
+  color: #1155FE;
+  font-weight: 700;
+}
+.wrap > input {
+  display: block;
+  width: 100%;
+  height: 30px;
+  margin-bottom: 30px;
+  border: 2px solid #1155FE;
+  background-color: #FFF;
+}
+.wrap > input::-moz-placeholder {
+  text-indent: 3px;
+}
+.wrap > input::placeholder {
+  text-indent: 3px;
+}
+.wrap > input:focus {
+  border: 2px solid rgba(17, 85, 254, 0);
+  outline: 3px solid #d35bf1;
+}
+.wrap > button {
+  display: block;
+  text-align: center;
+  margin: 50px auto 0;
+  width: 50%;
+  padding: 15px 20px;
+  border: none;
+  background: linear-gradient(to right, #1155FE, #d35bf1 70%);
+  background-blend-mode: multiply;
+  background-color: #000;
+  color: #FFF;
+  font-weight: 600;
+  font-size: 15px;
+  transition: all 0.5s;
+}
+.wrap > button:hover {
+  background-color: rgba(0, 0, 0, 0);
+}
+.wrap > p {
+  font-weight: 600;
+  font-size: 18px;
+  color: #000;
+  line-height: 60px;
+  text-align: center;
+}
+.wrap > p > span:first-child {
+  color: #1155FE;
+}
+.wrap > h4 {
+  color: #000;
+  font-size: 120px;
+  font-weight: 400;
+  font-family: "Libre Barcode EAN13 Text", cursive;
+  text-align: center;
+  padding: 30px 0px;
+  margin: 50px 80px;
+  border: 3px solid #1155FE;
+}

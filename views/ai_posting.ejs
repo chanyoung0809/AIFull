@@ -1,0 +1,35 @@
+<%- include("header", {title:"AI :: 공지사항 :: 글쓰기", cssFiles:["NewsStyle.css"], jsFiles:[ "header.js", "subMenu.js", "mGnb.js"]}) %>
+    <div id="container">
+        <div class="subCont1">
+            <div class="center">
+                <div class="subMenuWrap">
+                    <h2>미디어</h2>
+                    <ul class="subMenu">
+                        <li class="on"><a href="/media/news">공지사항</a></li>
+                        <li><a href="/media/gallery">갤러리</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="subCont2">
+            <div class="center">
+                <div class="subContentsWrap">
+                    <h3>글쓰기</h3>
+                    <div class="postingWrap">
+                        <form action="/media/news" method="get">
+                            <div class="titleWrap">
+                                <input type="text" placeholder="제목을 입력해주세요" maxlength="60" id="title" name="title"/>
+                                <input type="file" />
+                            </div>
+                            <textarea name="context" placeholder="내용을 입력해주세요"></textarea>
+                            <div class="btnWrap">   
+                                <button type="submit">작성하기</button>
+                                <button type="reset">다시 작성하기</button>
+                            </div>
+                        </form> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <%- include("footer") %>

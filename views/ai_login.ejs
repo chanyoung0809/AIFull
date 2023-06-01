@@ -1,0 +1,55 @@
+<%- include("header", {title:"AI :: 참가기업 로그인", cssFiles:["login.css"], jsFiles:[ "header.js", "subMenu.js", "mGnb.js", "loginCheck.js"]}) %>
+    <div id="container">
+        <div class="subCont1">
+            <div class="center">
+                <div class="subMenuWrap">
+                    <h2>스폰서쉽 프로그램</h2>
+                    <ul class="subMenu">
+                        <li><a href="/exhibitors/intro">참가안내</a></li>
+                        <li><a href="/exhibitors/sponserships">스폰서쉽 프로그램</a></li>
+                        <li class="on"><a href="/login">마이페이지</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="subCont2">
+            <div class="center">
+                <div class="subContentsWrap">
+                    <h3>마이페이지</h3>
+                    <div>
+                        <h4>참가기업 로그인</h4>
+                        <div class="memberWrap">
+                            <div class="loginWrap">
+                                <form>
+                                    <label for="userId">아이디</label>
+                                    <input id="userId" type="text" placeholder="아이디(e-mail 형식으로 입력해주세요)"/>
+                                    <label for="userPw">비밀번호</label>
+                                    <input id="userPw" type="password" placeholder="비밀번호를 입력해주세요"/>
+                                    <div>
+                                        <span class="ErrorMsg">입력하신 아이디나 비밀번호가 올바르지 않습니다!</span>
+                                        <div>
+                                            <button class="loginBtn">로그인</button>
+                                            <button>아이디/비밀번호 찾기</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="welcomeWrap">
+                                <div class="joins">
+                                    <p>회원가입이 아직이라면?</p>
+                                    <h6>기업회원 회원가입</h6>
+                                    <a><span>바로가기</span> <span>+</span></a>
+                                </div>
+                                <div class="visitors">
+                                    <p>개인/단체 참관을 원한다면?</p>
+                                    <h6>사전관람 신청/조회</h6>
+                                    <a href="/visitors/pre-regist"><span>바로가기</span> <span>+</span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <%- include("footer") %>
