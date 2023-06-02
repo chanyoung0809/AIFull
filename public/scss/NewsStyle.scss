@@ -283,14 +283,67 @@ td {
                     &.postingWrap {
                         width:100%;
                         > form {
-
+                            width:100%;
                             .titleWrap {
                                 display: flex;
-                                justify-content: flex-start;
-                                align-items: center;
-                                padding: 1%;
-                                > label {
+                                flex-direction: column;
+                                justify-content: center;
+                                width:100%;
+                                > input {
+                                    border: none;
+                                    outline: none;
+                                    background-color: #0000;
+                                    margin: 10px 0;
+                                    &#title {
+                                        font-size: 18px;
+                                        line-height: 200%;
+                                        display: block;
+                                        width:100%;
+                                        border-bottom: 1px solid #999;
+                                        &::placeholder {
+                                            font-family: "NanumSquare", sans-serif;
+                                        }
+                                    }
+                                    &#file {
+                                        font-size: 15px;
+                                        font-family: "NanumSquare", sans-serif;
+                                        display: block;
+                                        text-align: right;
+                                        width:100%;
+                                    }
+                                }
+                            }
+                            #context {
+                                resize: none;
+                                padding: 5px;
+                                width: calc(100% - 10px);
+                                height: 300px;
+                                font-size: 15px;
+                                outline: none;
+                                border: 1px solid #999;
+                                font-family: "NanumSquare", sans-serif;
+                                line-height: 150%;
+                                &::placeholder {
+                                    font-family: "NanumSquare", sans-serif;
+                                }
+                            }
+                            .btnWrap {
+                                display: flex;
+                                width:100%;
+                                justify-content: flex-end;
+                                > button {
+                                    border: none;
+                                    background-color: #1e1c2b;
+                                    color:#AAA;
                                     font-size: 15px;
+                                    margin: 10px 0px 10px 10px;
+                                    padding: 10px 20px;
+                                    transition: all .5s;
+                                    cursor: pointer;
+                                    &:hover {
+                                        color:#FFF;
+                                        background-color: #D35BF1;
+                                    }
                                 }
                             }
                         }

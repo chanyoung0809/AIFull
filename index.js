@@ -1,16 +1,43 @@
 const express = require("express") 
 const app = express(); 
+const port = 5000
 /*
 라우터, db... 서버 프로그램 작성에 필요한 수많은 명령어들을 담고 있는 함수 express
 (터미널에서 npm install express 해야 사용가능)
 */
+// 데이터베이스 명령어 함수들 사용하기 위해 불러들이는 작업
+const MongoClient = require('mongodb').MongoClient;
 
 // ejs 파일 형식을 node.js에서 사용하기 위한 시작구문
 app.set("view engine", "ejs")
+
 // 이미지, .css, .js등 정적 파일들을 ejs 파일 내에서 사용하기 위한 구문 
 app.use(express.static('public'));
 
-const port = 5000
+// 입력한 데이터값 객체 형식으로 전달받음(javascriptovject), 주소창의 key=value 를 key:value로 변환시켜줌
+app.use(express.json()) 
+// 입력값을 한번 더 검증하는 유효성 검사 진행
+app.use(express.urlencoded({ extended: true })) 
+//데이터베이스 연결을 위한 변수세팅(변수의 이름은 자유롭게 지어도 됨)
+let db; 
+
+// MongoClient.connect("본인의 데이터베이스 연결 주소",function(){})
+MongoClient.connect("mongodb+srv://cisalive:cisaliveS2@cluster0.cjlsn98.mongodb.net/?retryWrites=true&w=majority",function(err,result){
+    //에러가 발생했을경우 메세지 출력(선택사항)
+    if(err) { return console.log(err); }
+    //err <- DB에서 제공해주는 에러 메세지. 빨간색으로 틀린 부분 알려줌
+
+    //위에서 만든 db변수에 최종연결 ()안에는 mongodb atlas 사이트에서 생성한 데이터베이스 이름
+    // db = result.db("만들어준DB이름");
+    db = result.db("AI_portfolio");
+
+    //db연결이 제대로 됬다면 서버실행
+    app.listen(port,function(){
+        console.log("서버연결 성공");
+    });
+
+});
+
 
 app.get("/", (req, res)=>{
     // 메인페이지 경로 요청 시 index.ejs를 랜더링해주세요.
@@ -62,6 +89,33 @@ app.get("/media/posting", (req, res)=>{
    res.render("ai_posting.ejs");
 })
 
-app.listen(5000,()=>{
-    console.log("서버가 잘 실행되고 있습니다.");
+
+app.get("/visitors/pre-regist/fill", (req, res)=>{
+    // 사전등록 입력창
+   res.render("preRegist.ejs");
 })
+app.post("/visitors/pre-regist/data", (req, res) => {
+    // 사전등록 정보 DB
+    db.collection("pre-registers").insertOne({
+        // 삽입할 객체 구간
+        // 작명 : req.query.받아올 사용자 입력 태그들의 name,
+        prName : req.body.prName,
+        prBirth : req.body.prBirth
+    },(err)=>{
+        if(err){return console.log(err) } // 에러메세지출력 : 선택사항
+
+        res.redirect("/visitors/pre-regist/barcode") 
+        // 바코드 페이지로 리다이렉트
+    })
+})
+app.get("/visitors/pre-regist/barcode", (req, res)=>{
+    // 사전등록 바코드 창
+    db.collection("pre-registers").find().toArray((err, result)=>{
+        res.render("board_list.ejs", {content:result})
+    })
+})
+
+
+// app.listen(5000,()=>{
+//     console.log("서버가 잘 실행되고 있습니다.");
+// })

@@ -18,10 +18,10 @@
                     <div class="postingWrap">
                         <form action="/media/news" method="get">
                             <div class="titleWrap">
-                                <input type="text" placeholder="제목을 입력해주세요" maxlength="60" id="title" name="title"/>
-                                <input type="file" />
+                                <input type="text" placeholder="60자 이하로 제목을 입력해주세요" maxlength="60" id="title" name="title"/>
+                                <input type="file" id="file" name="file"/>
                             </div>
-                            <textarea name="context" placeholder="내용을 입력해주세요"></textarea>
+                            <textarea id="context" name="context" placeholder="내용을 입력해주세요"></textarea>
                             <div class="btnWrap">   
                                 <button type="submit">작성하기</button>
                                 <button type="reset">다시 작성하기</button>

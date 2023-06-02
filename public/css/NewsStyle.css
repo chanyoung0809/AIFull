@@ -294,14 +294,76 @@ td {
 #container .subCont2 .center .subContentsWrap > div.postingWrap {
   width: 100%;
 }
+#container .subCont2 .center .subContentsWrap > div.postingWrap > form {
+  width: 100%;
+}
 #container .subCont2 .center .subContentsWrap > div.postingWrap > form .titleWrap {
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 1%;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
 }
-#container .subCont2 .center .subContentsWrap > div.postingWrap > form .titleWrap > label {
+#container .subCont2 .center .subContentsWrap > div.postingWrap > form .titleWrap > input {
+  border: none;
+  outline: none;
+  background-color: rgba(0, 0, 0, 0);
+  margin: 10px 0;
+}
+#container .subCont2 .center .subContentsWrap > div.postingWrap > form .titleWrap > input#title {
+  font-size: 18px;
+  line-height: 200%;
+  display: block;
+  width: 100%;
+  border-bottom: 1px solid #999;
+}
+#container .subCont2 .center .subContentsWrap > div.postingWrap > form .titleWrap > input#title::-moz-placeholder {
+  font-family: "NanumSquare", sans-serif;
+}
+#container .subCont2 .center .subContentsWrap > div.postingWrap > form .titleWrap > input#title::placeholder {
+  font-family: "NanumSquare", sans-serif;
+}
+#container .subCont2 .center .subContentsWrap > div.postingWrap > form .titleWrap > input#file {
   font-size: 15px;
+  font-family: "NanumSquare", sans-serif;
+  display: block;
+  text-align: right;
+  width: 100%;
+}
+#container .subCont2 .center .subContentsWrap > div.postingWrap > form #context {
+  resize: none;
+  padding: 5px;
+  width: calc(100% - 10px);
+  height: 300px;
+  font-size: 15px;
+  outline: none;
+  border: 1px solid #999;
+  font-family: "NanumSquare", sans-serif;
+  line-height: 150%;
+}
+#container .subCont2 .center .subContentsWrap > div.postingWrap > form #context::-moz-placeholder {
+  font-family: "NanumSquare", sans-serif;
+}
+#container .subCont2 .center .subContentsWrap > div.postingWrap > form #context::placeholder {
+  font-family: "NanumSquare", sans-serif;
+}
+#container .subCont2 .center .subContentsWrap > div.postingWrap > form .btnWrap {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+}
+#container .subCont2 .center .subContentsWrap > div.postingWrap > form .btnWrap > button {
+  border: none;
+  background-color: #1e1c2b;
+  color: #AAA;
+  font-size: 15px;
+  margin: 10px 0px 10px 10px;
+  padding: 10px 20px;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+#container .subCont2 .center .subContentsWrap > div.postingWrap > form .btnWrap > button:hover {
+  color: #FFF;
+  background-color: #D35BF1;
 }
 #container .subCont2 .center .subContentsWrap > div .newsWrap {
   border-width: 1px 0 0 0;
