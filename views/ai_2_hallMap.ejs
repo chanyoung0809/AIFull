@@ -6,7 +6,7 @@
                     <h2>전시회 안내</h2>
                     <ul class="subMenu">
                         <li><a href="/intro/overview">행사개요</a></li>
-                        <li class="on"><a href="/intro/booth-maps">행사장 안내</a></li>
+                        <li class="on"><a href="/intro/booth-maps/SmartTech">행사장 안내</a></li>
                     </ul>
                 </div>
             </div>
@@ -19,37 +19,38 @@
                         <!-- <h4>부스 배치도</h4> -->
                         <div class="mapWrap">
                             <img style="margin-bottom: 50px; width:100%;" src="/imgs/mapCut.jpg" />
-                            <div class="theme SmartTech">Smart Tech Zone</div>
-                            <div class="theme AiBigData">Ai & Bigdata Zone</div>
-                            <div class="theme RetailTech">Retail Tech Zone</div>
-                            <div class="theme RobotTech">Robot Tech Zone</div>
-                            <div class="theme SecuTech">Security Tech Zone</div>
-                            <div class="theme Metaverse">Metaverse Zone</div>
+                            <div class="theme SmartTech <%- (data === "SmartTech") ? "on" : "" %>">Smart Tech Zone</div>
+                            <div class="theme AiBigData <%- (data === "AiBigData") ? "on" : "" %>">Ai & Bigdata Zone</div>
+                            <div class="theme RetailTech <%- (data === "RetailTech") ? "on" : "" %>">Retail Tech Zone</div>
+                            <div class="theme RobotTech <%- (data === "RobotTech") ? "on" : "" %>">Robot Tech Zone</div>
+                            <div class="theme SecuTech <%- (data === "SecuTech") ? "on" : "" %>">Security Tech Zone</div>
+                            <div class="theme Metaverse <%- (data === "Metaverse") ? "on" : "" %>">Metaverse Zone</div>
                         </div>
                         <!-- <h6>테마별 부스 위치</h6> -->
                         <ul class="themeMenu">
+            
                             <li>
-                                <input type="radio" id="SmartTech" value="SmartTech" name="theme" checked/>
+                                <input type="radio" id="SmartTech" value="SmartTech" name="theme"  <%- (data === "SmartTech") ? "checked" : null %> />
                                 <label for="SmartTech">Smart Tech Zone</label>
                             </li>
                             <li>
-                                <input type="radio" id="AiBigData" value="AiBigData" name="theme"/>
+                                <input type="radio" id="AiBigData" value="AiBigData" name="theme" <%- (data === "AiBigData") ? "checked" : null %> />
                                 <label for="AiBigData">Ai & Bigdata Zone</label>
                             </li>
                             <li>
-                                <input type="radio" id="RetailTech" value="RetailTech"  name="theme"/>
+                                <input type="radio" id="RetailTech" value="RetailTech"  name="theme" <%- (data === "RetailTech") ? "checked" : null %> />
                                 <label for="RetailTech">Retail Tech Zone</label>
                             </li>
                             <li>
-                                <input type="radio" id="RobotTech" value="RobotTech" name="theme"/>
+                                <input type="radio" id="RobotTech" value="RobotTech" name="theme" <%- (data === "RobotTech") ? "checked" : null %> />
                                 <label for="RobotTech">Robot Tech Zone</label>
                             </li>
                             <li>
-                                <input type="radio" id="SecuTech" value="SecuTech" name="theme"/>
+                                <input type="radio" id="SecuTech" value="SecuTech" name="theme" <%- (data === "SecuTech") ? "checked" : null %> />
                                 <label for="SecuTech">Security Tech Zone</label>
                             </li>
                             <li>
-                                <input type="radio" id="Metaverse" value="Metaverse" name="theme"/>
+                                <input type="radio" id="Metaverse" value="Metaverse" name="theme" <%- (data === "Metaverse") ? "checked" : null %> />
                                 <label for="Metaverse">Metaverse Zone</label>
                             </li>
                         </ul>
@@ -57,12 +58,12 @@
                     <div>    
                         <div class="exhibitorsWrap">
                             <img src="/imgs/ExhibitersCut.jpg">
-                            <div class="theme SmartTech"></div>
-                            <div class="theme AiBigData"></div>
-                            <div class="theme RetailTech"></div>
-                            <div class="theme RobotTech"></div>
-                            <div class="theme SecuTech"></div>
-                            <div class="theme Metaverse"></div>
+                            <div class="theme SmartTech <%- (data === "SmartTech") ? "on" : "" %>"></div>
+                            <div class="theme AiBigData <%- (data === "AiBigData") ? "on" : "" %>"></div>
+                            <div class="theme RetailTech <%- (data === "RetailTech") ? "on" : "" %>"></div>
+                            <div class="theme RobotTech <%- (data === "RobotTech") ? "on" : "" %>"></div>
+                            <div class="theme SecuTech <%- (data === "SecuTech") ? "on" : "" %>"></div>
+                            <div class="theme Metaverse <%- (data === "Metaverse") ? "on" : "" %>"></div>
                         </div>
                     </div>
                 </div>

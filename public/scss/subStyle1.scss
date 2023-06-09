@@ -292,7 +292,6 @@ td{
                             display: inline-block;
                             .theme {
                                 position: absolute;
-                                background-color: #d35bf158;
                                 display: flex;
                                 justify-content: center;
                                 align-items: center;
@@ -308,8 +307,10 @@ td{
                                     height: 37.4%;
                                     top: 42%;
                                     left: 26.8%;
-                                    opacity: 1;
                                     background-color:#115BFE33;
+                                    &.on {
+                                        opacity: 1;
+                                    }
                                 }
                                 &.AiBigData {
                                     width: 38.8%;
@@ -317,6 +318,9 @@ td{
                                     top: 42%;
                                     left: 58.1%;
                                     background-color:#5A5BF933;
+                                    &.on {
+                                        opacity: 1;
+                                    }
                                 }
                                 &.RetailTech {
                                     width: 24.1%;
@@ -324,6 +328,9 @@ td{
                                     top: 6.1%;
                                     left: 48.8%;
                                     background-color:#7E5BF733;
+                                    &.on {
+                                        opacity: 1;
+                                    }
                                 }
                                 &.RobotTech {
                                     width: 22.2%;
@@ -331,6 +338,9 @@ td{
                                     top: 6.1%;
                                     left: 26.8%;
                                     background-color:#9F5BF433;
+                                    &.on {
+                                        opacity: 1;
+                                    }
                                 }
                                 &.SecuTech {
                                     width: 24.1%;
@@ -338,6 +348,9 @@ td{
                                     top: 6.1%;
                                     left: 72.8%;
                                     background-color:#BF5BF233;
+                                    &.on {
+                                        opacity: 1;
+                                    }
                                 }
                                 &.Metaverse {
                                     width: 16.1%;
@@ -345,6 +358,9 @@ td{
                                     top: 25.2%;
                                     left: 10.9%;
                                     background-color:#D35BF133;
+                                    &.on {
+                                        opacity: 1;
+                                    }
                                 }
                             }
                         }
@@ -551,12 +567,14 @@ td{
                             opacity: 0;
                             transition: all .5s;
                             &.SmartTech {
-                                opacity: 1;
                                 top: 1%;
                                 left: 0%;
                                 width: 49.3%;
                                 height: 40.4%;
                                 background-color:#115BFE33;
+                                &.on {
+                                    opacity: 1;
+                                }
                             }
                             &.AiBigData {
                                 top: 41.3%;
@@ -564,6 +582,9 @@ td{
                                 width: 49.3%;
                                 height: 41%;
                                 background-color:#5A5BF933;
+                                &.on {
+                                    opacity: 1;
+                                }
                             }
                             &.RetailTech {
                                 top: 82.3%;
@@ -571,6 +592,9 @@ td{
                                 width: 100%;
                                 height: 16.9%;
                                 background-color:#7E5BF733;
+                                &.on {
+                                    opacity: 1;
+                                }
                             }
                             &.RobotTech {
                                 top: 1%;
@@ -578,6 +602,9 @@ td{
                                 width: 48.9%;
                                 height: 21.7%;
                                 background-color:#9F5BF433;
+                                &.on {
+                                    opacity: 1;
+                                }
                             }
                             &.SecuTech {
                                 top: 22.6%;
@@ -585,6 +612,9 @@ td{
                                 width: 48.9%;
                                 height: 24.7%;
                                 background-color:#BF5BF233;
+                                &.on {
+                                    opacity: 1;
+                                }
                             }
                             &.Metaverse {
                                 top: 47.4%;
@@ -592,6 +622,9 @@ td{
                                 width: 48.9%;
                                 height: 34.8%;
                                 background-color:#D35BF133;
+                                &.on {
+                                    opacity: 1;
+                                }
                             }
                         }
                     }

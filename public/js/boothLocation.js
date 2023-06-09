@@ -1,15 +1,19 @@
-const booths = document.querySelectorAll(".mapWrap > .theme");
-const selects = document.querySelectorAll(".themeMenu > li");
-const exhibits = document.querySelectorAll(".exhibitorsWrap > .theme");
+const booths = document.querySelectorAll(".mapWrap > .theme"); //위쪽 이미지에 겹쳐져있는 태그들
+
+const selects = document.querySelectorAll(".themeMenu > li"); //input 태그 감싸는 li
+
+const exhibits = document.querySelectorAll(".exhibitorsWrap > .theme"); //아래쪽 이미지에 겹쳐져있는 태그들
+
+
 selects.forEach((select, idx)=>{
     select.onclick=()=>{
         booths.forEach((booth)=>{
-            booth.style.opacity = 0;
+            booth.classList.remove("on");
         });
         exhibits.forEach((exhibit)=>{
-            exhibit.style.opacity = 0;
+            exhibit.classList.remove("on");
         });
-        booths[idx].style.opacity = 1;
-        exhibits[idx].style.opacity = 1;
+        booths[idx].classList.add("on");
+        exhibits[idx].classList.add("on");
     }
 });

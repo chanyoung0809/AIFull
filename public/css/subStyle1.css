@@ -304,7 +304,6 @@ td {
 }
 #container .subCont2 .center .subContentsWrap > div.mapsWrap .mapWrap .theme {
   position: absolute;
-  background-color: rgba(211, 91, 241, 0.3450980392);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -321,8 +320,10 @@ td {
   height: 37.4%;
   top: 42%;
   left: 26.8%;
-  opacity: 1;
   background-color: rgba(17, 91, 254, 0.2);
+}
+#container .subCont2 .center .subContentsWrap > div.mapsWrap .mapWrap .theme.SmartTech.on {
+  opacity: 1;
 }
 #container .subCont2 .center .subContentsWrap > div.mapsWrap .mapWrap .theme.AiBigData {
   width: 38.8%;
@@ -331,12 +332,18 @@ td {
   left: 58.1%;
   background-color: rgba(90, 91, 249, 0.2);
 }
+#container .subCont2 .center .subContentsWrap > div.mapsWrap .mapWrap .theme.AiBigData.on {
+  opacity: 1;
+}
 #container .subCont2 .center .subContentsWrap > div.mapsWrap .mapWrap .theme.RetailTech {
   width: 24.1%;
   height: 36.2%;
   top: 6.1%;
   left: 48.8%;
   background-color: rgba(126, 91, 247, 0.2);
+}
+#container .subCont2 .center .subContentsWrap > div.mapsWrap .mapWrap .theme.RetailTech.on {
+  opacity: 1;
 }
 #container .subCont2 .center .subContentsWrap > div.mapsWrap .mapWrap .theme.RobotTech {
   width: 22.2%;
@@ -345,6 +352,9 @@ td {
   left: 26.8%;
   background-color: rgba(159, 91, 244, 0.2);
 }
+#container .subCont2 .center .subContentsWrap > div.mapsWrap .mapWrap .theme.RobotTech.on {
+  opacity: 1;
+}
 #container .subCont2 .center .subContentsWrap > div.mapsWrap .mapWrap .theme.SecuTech {
   width: 24.1%;
   height: 36.4%;
@@ -352,12 +362,18 @@ td {
   left: 72.8%;
   background-color: rgba(191, 91, 242, 0.2);
 }
+#container .subCont2 .center .subContentsWrap > div.mapsWrap .mapWrap .theme.SecuTech.on {
+  opacity: 1;
+}
 #container .subCont2 .center .subContentsWrap > div.mapsWrap .mapWrap .theme.Metaverse {
   width: 16.1%;
   height: 37.7%;
   top: 25.2%;
   left: 10.9%;
   background-color: rgba(211, 91, 241, 0.2);
+}
+#container .subCont2 .center .subContentsWrap > div.mapsWrap .mapWrap .theme.Metaverse.on {
+  opacity: 1;
 }
 #container .subCont2 .center .subContentsWrap > div.mapsWrap .themeMenu {
   width: 15%;
@@ -545,12 +561,14 @@ td {
   transition: all 0.5s;
 }
 #container .subCont2 .center .subContentsWrap > div .exhibitorsWrap .theme.SmartTech {
-  opacity: 1;
   top: 1%;
   left: 0%;
   width: 49.3%;
   height: 40.4%;
   background-color: rgba(17, 91, 254, 0.2);
+}
+#container .subCont2 .center .subContentsWrap > div .exhibitorsWrap .theme.SmartTech.on {
+  opacity: 1;
 }
 #container .subCont2 .center .subContentsWrap > div .exhibitorsWrap .theme.AiBigData {
   top: 41.3%;
@@ -559,12 +577,18 @@ td {
   height: 41%;
   background-color: rgba(90, 91, 249, 0.2);
 }
+#container .subCont2 .center .subContentsWrap > div .exhibitorsWrap .theme.AiBigData.on {
+  opacity: 1;
+}
 #container .subCont2 .center .subContentsWrap > div .exhibitorsWrap .theme.RetailTech {
   top: 82.3%;
   left: 0%;
   width: 100%;
   height: 16.9%;
   background-color: rgba(126, 91, 247, 0.2);
+}
+#container .subCont2 .center .subContentsWrap > div .exhibitorsWrap .theme.RetailTech.on {
+  opacity: 1;
 }
 #container .subCont2 .center .subContentsWrap > div .exhibitorsWrap .theme.RobotTech {
   top: 1%;
@@ -573,6 +597,9 @@ td {
   height: 21.7%;
   background-color: rgba(159, 91, 244, 0.2);
 }
+#container .subCont2 .center .subContentsWrap > div .exhibitorsWrap .theme.RobotTech.on {
+  opacity: 1;
+}
 #container .subCont2 .center .subContentsWrap > div .exhibitorsWrap .theme.SecuTech {
   top: 22.6%;
   right: 0%;
@@ -580,12 +607,18 @@ td {
   height: 24.7%;
   background-color: rgba(191, 91, 242, 0.2);
 }
+#container .subCont2 .center .subContentsWrap > div .exhibitorsWrap .theme.SecuTech.on {
+  opacity: 1;
+}
 #container .subCont2 .center .subContentsWrap > div .exhibitorsWrap .theme.Metaverse {
   top: 47.4%;
   right: 0%;
   width: 48.9%;
   height: 34.8%;
   background-color: rgba(211, 91, 241, 0.2);
+}
+#container .subCont2 .center .subContentsWrap > div .exhibitorsWrap .theme.Metaverse.on {
+  opacity: 1;
 }
 
 #footer {

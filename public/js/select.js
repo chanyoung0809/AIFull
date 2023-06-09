@@ -8,10 +8,10 @@ const exhibitBtn = document.querySelector(".joinWrap > .exhibitWrap > div > butt
 const visitBtn = document.querySelector(".joinWrap > .visitWrap > div > button");
 
 exhibitBtn.onclick = ()=>{
-    window.location.href="login.html";
+    window.location.href="/login";
 };
 visitBtn.onclick = ()=>{
-    window.location.href="Container6.html";
+    window.location.href="/visitors/pre-regist";
 };
 
 const media = matchMedia("screen and (min-width: 1024px)");

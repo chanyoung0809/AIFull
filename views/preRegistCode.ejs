@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,9 +17,9 @@
             <div><img src="/imgs/logo_black.png"/></div>
             <h3>사전참관 코드</h3>
         </div>
-        <p class="name"><span>성함 : </span><span>고길동</span></p>
-        <p class="birth"><span>생년월일 : </span><span>1969-06-09</span></p>
-        <h4 class="barcode">1969060600001</h4>
+        <p class="name"><span>성함 : </span><span><%- data.prName %></span></p>
+        <p class="birth"><span>생년월일 : </span><span><%- data.prBirth %></span></p>
+        <h4 class="barcode">8801234<%- String(data.num).padStart(5, '0') %></h4>
         <!--88012304: 공통 / 00001 개별-->
     </div>
 </body>

@@ -48,9 +48,9 @@ app.get("/intro/overview", (req, res)=>{
     //서브페이지 1-1 전시회 안내 - 행사개요
    res.render("ai_1_overview");
 })
-app.get("/intro/booth-maps", (req, res)=>{
+app.get("/intro/booth-maps/:theme", (req, res)=>{
     //서브페이지 1-2 전시회 안내 - 행사장 안내
-   res.render("ai_2_hallMap");
+   res.render("ai_2_hallMap",{data:req.params.theme});
 })
 app.get("/exhibitors/intro", (req, res)=>{
     //서브페이지 2-1 참가기업 - 참가 안내
@@ -72,6 +72,35 @@ app.get("/visitors/pre-regist", (req, res)=>{
     //서브페이지 3-2 참관객 - 온라인 사전등록
    res.render("ai_6_pre_regist.ejs");
 })
+
+app.get("/visitors/pre-regist/add", (req ,res)=>{
+    // 서브페이지 3-2 참관객 - 온라인 사전등록 - 신청
+    res.render("preRegist");
+})
+
+// 사전등록 DB처리
+app.post("/visitors/pre-regist/dbinsert",(req, res)=>{
+    //사전등록자 인원수 체크하는 DB에 접근
+    db.collection("pre-regist-num").findOne({id:"barcodeNumber"},(err,countResult)=>{
+        db.collection("pre-registers").insertOne({
+            num:countResult.barcodeNum,
+            prName:req.body.prName,
+            prBirth:req.body.prBirth
+        },(err,result)=>{
+            //입장객 순번값 업데이트
+            db.collection("pre-regist-num").updateOne({id:"barcodeNumber"},{$inc:{barcodeNum:1}},(err,result)=>{
+                res.redirect(`/visitors/pre-regist/detail/${countResult.barcodeNum}`);
+            })
+        })
+    })
+})
+// 사전등록 완료 상세페이지로 이동
+app.get("/visitors/pre-regist/detail/:num",(req,res)=>{
+    db.collection("pre-registers").findOne({num:Number(req.params.num)},(err,result)=>{
+        res.render("preRegistCode", {data:result});
+    })
+})
+
 app.get("/visitors/location", (req, res)=>{
     //서브페이지 3-3 참관객 - 오시는길
    res.render("ai_7_location.ejs");
@@ -88,34 +117,3 @@ app.get("/media/posting", (req, res)=>{
     // 글쓰기 페이지
    res.render("ai_posting.ejs");
 })
-
-
-app.get("/visitors/pre-regist/fill", (req, res)=>{
-    // 사전등록 입력창
-   res.render("preRegist.ejs");
-})
-app.post("/visitors/pre-regist/data", (req, res) => {
-    // 사전등록 정보 DB
-    db.collection("pre-registers").insertOne({
-        // 삽입할 객체 구간
-        // 작명 : req.query.받아올 사용자 입력 태그들의 name,
-        prName : req.body.prName,
-        prBirth : req.body.prBirth
-    },(err)=>{
-        if(err){return console.log(err) } // 에러메세지출력 : 선택사항
-
-        res.redirect("/visitors/pre-regist/barcode") 
-        // 바코드 페이지로 리다이렉트
-    })
-})
-app.get("/visitors/pre-regist/barcode", (req, res)=>{
-    // 사전등록 바코드 창
-    db.collection("pre-registers").find().toArray((err, result)=>{
-        res.render("board_list.ejs", {content:result})
-    })
-})
-
-
-// app.listen(5000,()=>{
-//     console.log("서버가 잘 실행되고 있습니다.");
-// })
