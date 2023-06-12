@@ -4,23 +4,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>사전 참여 신청</title>
+    <title>사전참관 코드 확인</title>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@2.0/nanumsquare.css">
     <link rel="stylesheet" href="/css/preRegist.css">
     <script defer src="/js/preRegist.js"></script>
     <script defer src="js/sizeFix.js"></script>
 </head>
 <body>
-    <form class="wrap" action="/visitors/pre-regist/dbinsert"  method="post">
+    <form class="wrap" action="/visitors/pre-regist/dbfind"  method="post">
         <div>
             <div><img src="/imgs/logo_black.png"/></div>
-            <h3>사전참관 신청</h3>
+            <h3>사전참관 코드 확인</h3>
         </div>
         <label for="name">성함</label>
         <input id="name" type="text" name="prName" placeholder="실명을 2~6자 한글로 입력해주세요" maxlength="6"/>
         <label for="birth">생년월일</label>
         <input id="birth" type="date" name="prBirth"/>
-        <button type="submit">입장코드 받기</button>
+        <button type="submit">입장코드 확인하기</button>
     </form>
 </body>
 </html>

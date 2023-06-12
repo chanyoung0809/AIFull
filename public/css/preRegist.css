@@ -28,23 +28,23 @@ ol, ul, li {
 }
 
 .wrap {
-  padding: 25px;
-  height: 100vh;
   color: #FFF;
+  width: 95%;
+  margin: 0 auto;
 }
 .wrap > div {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 100px;
+  width: 100%;
+  margin-top: 10px;
 }
 .wrap > div > div {
   overflow-y: hidden;
-  height: 45px;
+  height: 80px;
 }
 .wrap > div > h3 {
   text-align: center;
-  margin-top: 20px;
   color: #000;
   font-weight: 800;
   font-size: 25px;
@@ -88,6 +88,7 @@ ol, ul, li {
   font-weight: 600;
   font-size: 15px;
   transition: all 0.5s;
+  cursor: pointer;
 }
 .wrap > button:hover {
   background-color: rgba(0, 0, 0, 0);
@@ -102,6 +103,12 @@ ol, ul, li {
 .wrap > p > span:first-child {
   color: #1155FE;
 }
+.wrap > p.err_msg {
+  font-size: 15px;
+  width: 80%;
+  margin: 0 auto;
+  line-height: 150%;
+}
 .wrap > h4 {
   color: #000;
   font-size: 120px;
@@ -111,4 +118,11 @@ ol, ul, li {
   padding: 30px 0px;
   margin: 50px 80px;
   border: 3px solid #1155FE;
+}
+.wrap a {
+  background: linear-gradient(to right, #1155FE, #d35bf1 70%);
+  color: #FFF;
+  display: inline-block;
+  line-height: 200%;
+  padding: 0 10px;
 }

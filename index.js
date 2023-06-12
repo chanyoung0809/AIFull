@@ -101,6 +101,19 @@ app.get("/visitors/pre-regist/detail/:num",(req,res)=>{
     })
 })
 
+// 사전등록 코드확인
+app.get("/visitors/pre-regist/find", (req ,res)=>{
+    res.render("prCodeFind");
+})
+
+// 사전등록 코드확인 DB처리
+app.post("/visitors/pre-regist/dbfind", (req, res)=>{
+    db.collection("pre-registers").findOne({prName:req.body.prName, prBirth:req.body.prBirth},(err,prResult)=>{
+        // console.log(prResult);
+        res.render("preRegistCode", {data:prResult});
+    })
+})
+
 app.get("/visitors/location", (req, res)=>{
     //서브페이지 3-3 참관객 - 오시는길
    res.render("ai_7_location.ejs");

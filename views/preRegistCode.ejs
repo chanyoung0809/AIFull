@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Libre+Barcode+EAN13+Text&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/preRegist.css">
+    <script defer src="/js/sizeFix.js"></script>
     <title>사전 참여 코드</title>
 </head>
 <body>
@@ -17,10 +18,17 @@
             <div><img src="/imgs/logo_black.png"/></div>
             <h3>사전참관 코드</h3>
         </div>
-        <p class="name"><span>성함 : </span><span><%- data.prName %></span></p>
-        <p class="birth"><span>생년월일 : </span><span><%- data.prBirth %></span></p>
-        <h4 class="barcode">8801234<%- String(data.num).padStart(5, '0') %></h4>
-        <!--88012304: 공통 / 00001 개별-->
+        <% if (data) { %>
+            <p class="name"><span>성함 : </span><span><%- data.prName %></span></p>
+            <p class="birth"><span>생년월일 : </span><span><%- data.prBirth %></span></p>
+            <h4 class="barcode">8801234<%- String(data.num).padStart(5, '0') %></h4>
+            <!--88012304: 공통 / 00001 개별-->
+        <% } else { %>
+            <p class="err_msg">해당 성함과 생년월일로 조회되는 사전등록자 정보가 없습니다. 입력하신 정보를 확인해주세요<p>
+            <a href="/visitors/pre-regist/find">뒤로가기</a>
+            <a href="/visitors/pre-regist/add">사전등록신청하기</a>
+        <% } %>
+        
     </div>
 </body>
 </html>
