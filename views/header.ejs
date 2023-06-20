@@ -47,7 +47,11 @@
                     <ul class="depth2">
                         <li><a href="/exhibitors/intro">참가안내</a></li>
                         <li><a href="/exhibitors/sponserships">스폰서쉽 프로그램</a></li>
-                        <li><a href="/login">마이페이지</a></li>
+                        <% if (login) { %>
+                            <li><a href="/mypage">마이페이지</a></li>
+                        <% } else { %>
+                            <li><a href="/login">로그인</a></li>
+                        <% } %> 
                     </ul>
                 </li>
                 <li>
@@ -59,7 +63,7 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="#">미디어</a>
+                    <a href="/media/news">미디어</a>
                     <ul class="depth2">
                         <li><a href="/media/news">공지사항</a></li>
                         <li><a href="/media/gallery">갤러리</a></li>
@@ -68,7 +72,11 @@
             </ul>
         </div>
         <div class="userGnb">
-            <li><a href='/login'>로그인</a></li>
+            <% if (login) { %>
+                <li><a href='/logout'>로그아웃</a></li>  
+            <% } else { %>
+                <li><a href='/login'>로그인</a></li>
+            <% } %> 
             <li>
                 <button class="hbgMenu"><!-- 반응형에서 gnb 사라지고 나타날 햄버거 메뉴 -->
                     <span class="line one"></span>

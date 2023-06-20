@@ -398,6 +398,13 @@ td {
   letter-spacing: -1px;
   font-size: 15px;
 }
+#container .subCont2 .center .subContentsWrap > div .newsWrap > ul > li > a {
+  color: #000;
+  transition: all 0.5s;
+}
+#container .subCont2 .center .subContentsWrap > div .newsWrap > ul > li > a:hover {
+  color: #D35BF1;
+}
 #container .subCont2 .center .subContentsWrap > div .newsWrap > ul > li.idx {
   width: 7%;
 }
@@ -415,9 +422,8 @@ td {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  display: none;
 }
-#container .subCont2 .center .subContentsWrap > div .boardBot .writeBtn > button {
+#container .subCont2 .center .subContentsWrap > div .boardBot .writeBtn > a {
   border: 2px solid #AAA;
   background-color: #AAA;
   display: inline-block;
@@ -425,8 +431,9 @@ td {
   padding: 7px 15px;
   font-weight: 700;
   transition: all 0.5s;
+  color: #000;
 }
-#container .subCont2 .center .subContentsWrap > div .boardBot .writeBtn > button:hover {
+#container .subCont2 .center .subContentsWrap > div .boardBot .writeBtn > a:hover {
   border: 2px solid #000;
   background-color: rgba(0, 0, 0, 0);
   cursor: pointer;
@@ -488,6 +495,66 @@ td {
 }
 #container .subCont2 .center .subContentsWrap > div .boardBot .paginationWrap .pagination > li.on > a {
   color: #000;
+}
+#container .subCont2 .center .subContentsWrap > div.detail_wrap {
+  width: 100%;
+}
+#container .subCont2 .center .subContentsWrap > div.detail_wrap > h4 {
+  font-size: 1.6vw;
+  background-color: #003ce2;
+  text-align: center;
+  word-break: keep-all;
+  line-height: 400%;
+  color: #FFF;
+  margin-top: 1%;
+}
+#container .subCont2 .center .subContentsWrap > div.detail_wrap > h6 {
+  width: 100%;
+  margin: 0 auto;
+  text-align: end;
+  line-height: 200%;
+  font-size: 1.2vw;
+}
+#container .subCont2 .center .subContentsWrap > div.detail_wrap .img_wrap {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-bottom: 1%;
+}
+#container .subCont2 .center .subContentsWrap > div.detail_wrap .img_wrap > img {
+  width: 100%;
+}
+#container .subCont2 .center .subContentsWrap > div.detail_wrap > pre {
+  width: 100%;
+  font-family: "NanumSquare", sans-serif;
+  line-height: 200%;
+  word-break: keep-all;
+  text-align: left;
+  font-size: 1.2vw;
+  white-space: pre-wrap;
+  margin-bottom: 1%;
+  border-bottom: 1px solid #CCC;
+}
+#container .subCont2 .center .subContentsWrap > div.btn_wrap {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  margin-bottom: 1%;
+}
+#container .subCont2 .center .subContentsWrap > div.btn_wrap > a {
+  font-size: 1.2vw;
+  background-color: #666;
+  border: 1px solid #666;
+  line-height: 280%;
+  font-weight: 700;
+  padding: 0 1vw;
+  color: #FFF;
+  margin-left: 1vw;
+  transition: all 0.5s;
+}
+#container .subCont2 .center .subContentsWrap > div.btn_wrap > a:hover {
+  color: #000;
+  background-color: rgba(102, 102, 102, 0);
 }
 #container .subCont2 .center .subContentsWrap > div .PhotoMenus {
   display: flex;

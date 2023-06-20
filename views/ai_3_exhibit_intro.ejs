@@ -7,7 +7,13 @@
                     <ul class="subMenu">
                         <li class="on"><a href="/exhibitors/intro">참가안내</a></li>
                         <li><a href="/exhibitors/sponserships">스폰서쉽 프로그램</a></li>
-                        <li><a href="/login">마이페이지</a></li>
+                        <li>
+                            <% if (login) { %>
+                                <a href="/mypage">마이페이지</a>
+                            <% } else { %>
+                                <a href="/login">로그인</a>
+                            <% } %> 
+                        </li>
                     </ul>
                 </div>
             </div>

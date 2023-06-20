@@ -345,6 +345,9 @@ th, td {
 #container .subCont2 .center .subContentsWrap > div .memberWrap .welcomeWrap .joins:hover {
   background-color: #003ce2;
 }
+#container .subCont2 .center .subContentsWrap > div .memberWrap .welcomeWrap .joins a {
+  color: #FFF;
+}
 #container .subCont2 .center .subContentsWrap > div .memberWrap .welcomeWrap .visitors {
   background-color: rgba(194, 0, 243, 0.3333333333);
   border-top: 3px solid #FFF;

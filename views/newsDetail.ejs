@@ -1,0 +1,36 @@
+<%- include("header", {title:"AI :: 공지사항", cssFiles:["NewsStyle.css"], jsFiles:[ "header.js", "subMenu.js", "mGnb.js"]}) %>
+    <div id="container">
+        <div class="subCont1">
+            <div class="center">
+                <div class="subMenuWrap">
+                    <h2>미디어</h2>
+                    <ul class="subMenu">
+                        <li class="on"><a href="/media/news">공지사항</a></li>
+                        <li><a href="/media/gallery">갤러리</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="subCont2">
+            <div class="center">
+                <div class="subContentsWrap">
+                    <div class="detail_wrap">
+                        <h4><%- data.title %></h4>
+                        <h6>작성자 : <%- data.userNickName %></h6>
+                        <div class="img_wrap">
+                            <img src="/upload/<%- data.attachfile %>"/>
+                        </div>
+                        <pre><%- data.context %></pre>
+                    </div>
+                    <div class="btn_wrap">
+                        <% if (login) { %>
+                            <a href="/media/update/<%- data.num %>">수정하기</a>
+                            <a href="/dbdelete/<%- data.num %>">삭제하기</a>
+                        <% } %>
+                        <a href="/media/news">목록으로</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <%- include("footer") %>

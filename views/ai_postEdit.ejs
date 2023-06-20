@@ -16,12 +16,14 @@
                 <div class="subContentsWrap">
                     <h3>수정하기</h3>
                     <div class="postingWrap">
-                        <form action="/media/news" method="get">
+                        <form action="/dbupdate" method="post" enctype="multipart/form-data">
                             <div class="titleWrap">
-                                <input type="text" placeholder="60자 이하로 제목을 입력해주세요" maxlength="60" id="title" name="title" value="제목을 수정해보세요"/>
-                                <input type="file" id="file" name="file"/>
+                                <input type="text" placeholder="60자 이하로 제목을 입력해주세요" maxlength="60" id="title" name="title" value="<%- data.title %>" required/>
+                                <input id="file" type="file" name="thumbnail"/>
+                                <input type="hidden" name="userNickName" value="ADMIN"/>
+                                <input type="hidden" name="num" value="<%- data.num %>"/>
                             </div>
-                            <textarea id="context" name="context" placeholder="내용을 입력해주세요" value="내용을 수정해보세요"></textarea>
+                            <textarea id="context" name="context" placeholder="내용을 입력해주세요" required><%- data.context %></textarea>
                             <div class="btnWrap">   
                                 <button type="submit">작성하기</button>
                                 <button type="reset">다시 작성하기</button>

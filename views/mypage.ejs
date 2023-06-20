@@ -1,0 +1,29 @@
+<%- include("header", {title:"AI :: 참가기업 로그인", cssFiles:["login.css"], jsFiles:[ "header.js", "subMenu.js", "mGnb.js", "loginCheck.js"]}) %>
+    <div id="container">
+        <div class="subCont1">
+            <div class="center">
+                <div class="subMenuWrap">
+                    <h2>스폰서쉽 프로그램</h2>
+                    <ul class="subMenu">
+                        <li><a href="/exhibitors/intro">참가안내</a></li>
+                        <li><a href="/exhibitors/sponserships">스폰서쉽 프로그램</a></li>
+                        <li class="on">
+                            <% if (login) { %>
+                                <a href="/mypage">마이페이지</a>
+                            <% } else { %>
+                                <a href="/login">마이페이지</a>
+                            <% } %> 
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="subCont2">
+            <div class="center">
+                <div class="subContentsWrap">
+                    <h3>마이페이지</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+<%- include("footer") %>

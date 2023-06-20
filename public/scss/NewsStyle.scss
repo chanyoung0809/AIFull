@@ -378,6 +378,13 @@ td {
                                 border-color: #CCC;
                                 letter-spacing: -1px;
                                 font-size: 15px;
+                                > a {
+                                    color: #000;
+                                    transition: all .5s;
+                                    &:hover {
+                                        color: #D35BF1;
+                                    }
+                                }
                                 &.idx {
                                     width: 7%;
                                 }
@@ -399,8 +406,7 @@ td {
                             display: flex;
                             justify-content: flex-end;
                             align-items: center;
-                            display: none;
-                            > button {
+                            > a {
                                 border: 2px solid #AAA;
                                 background-color: #AAA;
                                 display: inline-block;
@@ -408,6 +414,7 @@ td {
                                 padding: 7px 15px;
                                 font-weight: 700;
                                 transition: all .5s;
+                                color:#000;
                                 &:hover {
                                     border: 2px solid #000;
                                     background-color: #0000;
@@ -472,6 +479,65 @@ td {
                                         }
                                     }
                                 }
+                            }
+                        }
+                    }
+                    &.detail_wrap {
+                        width: 100%;
+                        > h4 {
+                            font-size: 1.6vw;
+                            background-color: #003ce2;
+                            text-align: center;
+                            word-break: keep-all;
+                            line-height: 400%;
+                            color: #FFF;
+                            margin-top: 1%;
+                        }
+                        > h6 {
+                            width: 100%;
+                            margin: 0 auto;
+                            text-align: end;
+                            line-height: 200%;
+                            font-size: 1.2vw;
+                        }
+                        .img_wrap {
+                            width: 100%;
+                            object-fit: cover;
+                            margin-bottom: 1%;
+                            > img {
+                                width: 100%;
+                            }
+                        }
+                        > pre {
+                            width: 100%;
+                            font-family: "NanumSquare", sans-serif;
+                            line-height: 200%;
+                            word-break: keep-all;
+                            text-align: left;
+                            font-size: 1.2vw;
+                            white-space: pre-wrap;
+                            margin-bottom: 1%;
+                            border-bottom: 1px solid #CCC;
+                        }
+                    }
+                    &.btn_wrap {
+                        display: flex;
+                        width: 100%;
+                        justify-content: flex-end;
+                        margin-bottom: 1%;
+                        > a {
+                            font-size: 1.2vw;
+                            background-color: #666;
+                            border: 1px solid #666;
+                            line-height: 280%;
+                            font-weight: 700;
+                            padding: 0 1vw;
+                            color: #FFF;
+                            margin-left:1vw;
+                            transition: all .5s;
+                            &:hover {
+                                color: #000;
+                                background-color: #6660;
                             }
                         }
                     }

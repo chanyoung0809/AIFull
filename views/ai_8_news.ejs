@@ -23,7 +23,16 @@
                                 <li class="author">글쓴이</li>
                                 <li class="date">작성일자</li>
                             </ul>
-                            <ul class="newsboard boardMid">
+                            <% data.forEach((el) => { %>
+                                <ul class="newsboard boardMid">
+                                    <li class="idx"><%- el.num %></li>
+                                    <li class="title"><a href="/media/news/<%- el.num %>"><%- el.title %></a></li>
+                                    <li class="author"><%- el.
+                                        userNickName %></li>
+                                    <li class="date">2023-04-01</li>
+                                </ul>
+                            <% }) %>
+                            <!-- <ul class="newsboard boardMid">
                                 <li class="idx">12</li>
                                 <li class="title">NHN클라우드, 국제인공지능대전 참가…AI 얼굴인식으로 전시 입장한다</li>
                                 <li class="author">NHNCloud</li>
@@ -94,10 +103,12 @@
                                 <li class="title">지란지교데이터, ‘딥러닝 기반 비정형 텍스트 내 개인정보 탐지·비식별조치 기술’ 공개한다.</li>
                                 <li class="author">JIRANDATA</li>
                                 <li class="date">2023-04-01</li>
-                            </ul>
+                            </ul> -->
                         </div>
                         <div class="newsboard boardBot">
-                            <div class="writeBtn"><button>글쓰기</button></div>
+                            <% if (login) { %>
+                                <div class="writeBtn"><a href="/media/posting">글쓰기</a></div>
+                            <% } %>
                             <form>
                                 <div class="searchWrap">
                                     <input type="text" placeholder="검색어를 입력하세요"/>

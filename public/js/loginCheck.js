@@ -1,17 +1,16 @@
 const idArea = document.querySelector("#userId");
 const pwArea = document.querySelector("#userPw");
 const errorMsg = document.querySelector("#container .subCont2 .center .subContentsWrap > div .memberWrap .loginWrap > form > div > span");
-console.log(errorMsg);
 
 let idCheck = /^[\w]+@[a-z]+\.[a-z]{2,3}$/;
 let pwCheck = /^[\w\d^*!-]{8,13}$/;
-let loginForm = document.querySelector(".loginWrap > form")
+let loginForm = document.querySelector(".loginWrap > form");
 
 loginForm.onsubmit=(e)=>{
     let idValid = idCheck.test(idArea.value);
     let pwValid = pwCheck.test(pwArea.value);
     if(idValid && pwValid){
-        loginForm.submit();
+        e.submit();
     }
     else {
         e.preventDefault();

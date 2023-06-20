@@ -1,6 +1,13 @@
 <div class="mGnbBg">
     <div class="mGnbWrap">
         <div class="closeBtnWrap">
+            <div class="logInOut">
+                <% if (login) { %>
+                    <a href="/logout">로그아웃</a>
+                <% } else { %>
+                    <a href="/login">로그인</a>
+                <% } %> 
+            </div>
             <button class="hbgMenu clicked"><!-- 반응형에서 gnb 사라지고 나타날 햄버거 메뉴 -->
                 <span class="line one"></span>
                 <span class="line two"></span>
@@ -32,7 +39,13 @@
                 <ul class="sub">
                     <li><a href="/exhibitors/intro">참가안내</a></li>
                     <li><a href="/exhibitors/sponserships">스폰서쉽 프로그램</a></li>
-                    <li><a href="/login">마이페이지</a></li>
+                    <li>
+                        <% if (login) { %>
+                            <li><a href="/mypage">마이페이지</a></li>
+                        <% } else { %>
+                            <li><a href="/login">로그인</a></li>
+                        <% } %> 
+                    </li>
                 </ul>
             </li>
             <li>
