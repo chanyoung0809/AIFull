@@ -138,11 +138,12 @@ app.post("/visitors/pre-regist/dbfind", (req, res)=>{
     })
 })
 
+//서브페이지 3-3 참관객 - 오시는길
 app.get("/visitors/location", (req, res)=>{
-    //서브페이지 3-3 참관객 - 오시는길
    res.render("ai_7_location.ejs", {login:req.user});
 })
 
+// 파일 저장 관련 페이지
 const storage = multer.diskStorage({
     // storage 상수
     destination: function (req, file, cb) {
@@ -153,17 +154,20 @@ const storage = multer.diskStorage({
       cb(null, file.originalname = Buffer.from(file.originalname, 'latin1').toString('utf8'))
       // 영어가 아닌 다른 파일명 안깨지고 나오게 처리(궰쇊어 안나오게 해줌)
     }
-  })
+});
   
-const upload = multer({ storage: storage })
 //upload는 위의 설정사항을 담은 변수(상수) 
+const upload = multer({ storage: storage })
 
+
+//게시글 업로드 페이지
 app.post("/dbupload",upload.single("thumbnail"),(req,res)=>{
     db.collection("boardCount").findOne({id:"게시물갯수"},(err,countResult)=>{
         db.collection("board").insertOne({
+            
             num:countResult.idx,
             title:req.body.title,
-            userNickName:req.body.userNickName,
+            userNickName:req.user.userNickName,
             context:req.body.context,
             attachfile:req.file.filename,
         },(err,result)=>{
@@ -175,9 +179,51 @@ app.post("/dbupload",upload.single("thumbnail"),(req,res)=>{
 });
 
 app.get("/media/news", (req, res)=>{
-    db.collection("board").find().sort({num:-1}).toArray((err,result)=>{
-        //서브페이지 4-1 미디어 - 뉴스
-        res.render("ai_8_news.ejs", {login:req.user, data:result});
+    db.collection("board").find().toArray((err,total)=>{
+        let totalData = total.length;
+        // 게시글 전체 갯수값 알아내서 변수로 저장
+
+        // 페이지 번호가 공란일 때(잘못된 값일 때) ? 1로고정 : 받은 페이지값을 숫자로
+        let pageNumber = (req.query.page == null) ? 1 : Number(req.query.page);
+
+        // 한 페이지에 보여줄 게시글 갯수 설정
+        let perPage = 6;
+        // 블록당 보여줄 페이징 번호 갯수값 설정
+        let blockCount = 3;
+        // 이전, 다음 블록 간 이동 하기 위한 현재 페이지 블록 구하기
+        let blockNum = Math.ceil(pageNumber / blockCount);
+
+        // 블록 안 페이지 번호 시작값 알아내기 (1) 2 3 4 5
+        let blockStart = ((blockNum -1) * blockCount) + 1;
+        // 블록 안 페이지 번호 끝값 알아내기 1 2 3 4 (5)
+        let blockEnd =  blockStart + blockCount -1;
+
+        // 게시글 전체 갯수를 토대로 전체 페이지 번호가 총 몇 개 만들어져서 표시돼야하는지?
+        let totalPaging = Math.ceil(totalData/perPage);
+
+        // 블록(그룹)에서 마지막 페이지 번호가 끝 번호보다 크다면 페이지의 끝번호를 강제로 고정시킴(잘못된 접근 막기 위해)
+        if(blockEnd > totalPaging){
+            blockEnd = totalPaging;
+            // 끝번호 7인데, 10번 페이지를 보려고 한다면 7로 고정시킴
+        }
+
+        // 페이징블록(그룹)의 총 갯수값 구하기
+        let totalBlock = Math.ceil(totalPaging / blockCount);
+
+        // db에서 게시글 뽑아서 가져오기 위한 순서값(몇 번째부터 가져올 것인가?) 정해주기(페이지번호 1 - 20, 19, 18. 2 - 17, 16, 15...)
+        let startFrom = (pageNumber - 1) * perPage;
+        db.collection("board").find().sort({num:-1}).skip(startFrom).limit(perPage).toArray((err,result)=>{
+            res.render("ai_8_news.ejs", {
+                data:result, // find로 찾아온 게시글 데이터들
+                totalPaging:totalPaging, // 페이지 번호 총 갯수값 -> 7개
+                blockStart:blockStart, // 블록 안의 페이지 시작 번호값
+                blockEnd:blockEnd, // 블록 안의 페이지 끝 번호값
+                blockNum:blockNum, // 보고있는 페이지 번호가 몇 번 블록(그룹번호)에 있는지 확인
+                totalBlock:totalBlock, // 블록(그룹)의 총 갯수 -> 2개
+                pageNumber:pageNumber, // 현재 보고있는 페이지 값
+                login:req.user
+            })
+        })
     })
 })
 app.get("/media/gallery", (req, res)=>{
@@ -229,7 +275,6 @@ app.post("/dbupdate",upload.single("thumbnail"),(req,res)=>{
         } 
     }
     db.collection("board").updateOne({num:Number(req.body.num)},{$set:changeDatas},(err,result)=>{
-        console.log(req.body.num);
         res.redirect(`/media/news/${req.body.num}`); 
     })
 })
@@ -242,6 +287,70 @@ app.get("/dbdelete/:num", (req,res)=>{
         res.redirect("/media/news");
     })
 })
+
+//검색 요청
+app.get("/search", (req,res)=>{
+    // find기능의 한계점 
+    // -> 1) key를 바꿀 수 없음(제목, 작성자 나눠서 찾아올 수 없음)
+    // -> 2) 부분일치 항목은 찾아오지 못함(띄어쓰기 하나까지 토씨하나 틀린거없이 일치해야 함)
+    // 검색기능에 사용하기 부적합함
+    /* 
+    검색용 커맨드 사용하는 법 
+        1) MongoDB에서 사용할 DB 콜렉션을 클릭
+        2) 콜렉션 상단의 search 버튼 클릭
+        3) Create Search Index 클릭
+        4) Visual Editor 선택 -> next
+        5) Index Name 설정(영문대소문자, -_  만 사용해서 작명)
+        6) Database and Collection에서 사용할 DBcollection 선택 -> next
+        7) Refine your index 클릭
+        8) Index Configurations -> lucene.korean -> save change -> create
+        9) status가 active가 되면 사용 가능(2~3분 정도 소요)
+        Indexes Used: 1 of 3.
+        무료버전은 검색기능 3개까지만 사용 가능. 
+        ... -> delete index 눌러서 삭제 가능 
+        10) searchTester에서 검색 잘 되는지 확인(한글 2글자, 숫자 3개 이상부터 검색 가능)
+        11) Quick Start Tutorials -> Implement search-as-you-type -> autocomplete
+        // Run an Atlas Search query with the autocomplete operator on the "콜렉션명" collection. 코드 참조
+        $limit: 20 <- 출력 갯수 설정.(페이징 기능에서도 활용됨)
+        (오름차순 : 1-> ∞ 내림차순 ∞-> 1)
+    */ 
+
+    // 검색조건 세팅
+    let check = [
+    {
+        // $search:{ 뭘 어떻게 찾을 건지?
+        $search:{
+            
+            index: "aiSearch", //db사이트에서 설정한 index 이름
+            text:{
+                query: req.query.inputText,
+                // 검색단어 입력단어값 (query:명령을 내리다, 질의하다)
+                path: req.query.search
+                // 어떤 항목을 검색할 것인지?
+                // 여러 개 설정할 때는 배열로 설정
+            }   
+        }
+    },
+    {
+        // 어떻게 정렬할 것인가? 1-> 오름차순, -1 -> 내림차순
+        $sort:{num:-1}
+    },
+    // {
+    //     // 몇 개씩 정렬할 것인가? (페이징 때 적극 활용될 것)
+    //     $limit:2 
+    // }
+]
+    //위에서 설정한 변수 check를 aggregate 매개변수로 가져옴
+    db.collection("board").aggregate(check).toArray((err,result)=>{
+        // result에서 배열 형태로 가져옴
+        res.render("ai_8_news.ejs",{data:result, text:req.query.inputText, login:req.user});
+        // 게시판 페이지를 데이터 담아서 랜더링함
+        // (redirect 쓰면, 해당 경로로 가는 걸로 요청되고, 그러면 전체 데이터가 담긴 게시판 페이지로 랜더링되기 때문에 안됨!)
+    })
+
+})
+
+
 
 app.get("/sign-up", (req, res)=>{
     //회원가입 페이지
@@ -265,7 +374,8 @@ app.post("/joindb",(req,res)=>{
                     registNum:req.body.registNum, // 사업자번호
                     userMail:req.body.userMail, // 이메일
                     userNickName:req.body.userNickName, // 닉네임
-                    userPW:req.body.userPW //비밀번호
+                    userPW:req.body.userPW, //비밀번호
+                    role:"common"
                 },(err)=>{
                     db.collection("cUsersNum").updateOne({name:"기업사용자"},{$inc:{cNum:1}},(err)=>{
                         res.send(`<script> alert("회원가입이 완료되었습니다."); location.href="/login";  </script>`);

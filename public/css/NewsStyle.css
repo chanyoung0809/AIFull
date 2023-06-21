@@ -432,6 +432,7 @@ td {
   font-weight: 700;
   transition: all 0.5s;
   color: #000;
+  margin-left: 10px;
 }
 #container .subCont2 .center .subContentsWrap > div .boardBot .writeBtn > a:hover {
   border: 2px solid #000;
@@ -446,6 +447,17 @@ td {
 #container .subCont2 .center .subContentsWrap > div .boardBot > form .searchWrap {
   position: relative;
   margin-bottom: 30px;
+}
+#container .subCont2 .center .subContentsWrap > div .boardBot > form .searchWrap > select {
+  font-family: "NanumSquare";
+  height: 29px;
+  font-size: 15px;
+  border: none;
+  border-bottom: 1px solid #AAA;
+  width: 65px;
+}
+#container .subCont2 .center .subContentsWrap > div .boardBot > form .searchWrap > select > option {
+  font-family: "NanumSquare";
 }
 #container .subCont2 .center .subContentsWrap > div .boardBot > form .searchWrap > input {
   border: none;
@@ -465,6 +477,7 @@ td {
   bottom: 0;
   right: 0;
   height: 30px;
+  cursor: pointer;
 }
 #container .subCont2 .center .subContentsWrap > div .boardBot > form .searchWrap > button > span {
   font-size: 25px;

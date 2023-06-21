@@ -1,4 +1,4 @@
-<%- include("header", {title:"AI :: 공지사항 :: 글쓰기", cssFiles:["NewsStyle.css"], jsFiles:[ "header.js", "subMenu.js", "mGnb.js"]}) %>
+<%- include("header", {title:"AI :: 공지사항 :: 글쓰기", cssFiles:["NewsStyle.css"], jsFiles:[ "header.js", "subMenu.js", "mGnb.js", "fileSelect.js"]}) %>
     <div id="container">
         <div class="subCont1">
             <div class="center">
@@ -16,15 +16,14 @@
                 <div class="subContentsWrap">
                     <h3>글쓰기</h3>
                     <div class="postingWrap">
-                        <form action="/dbupload" method="post" enctype="multipart/form-data">
+                        <form action="/dbupload" method="post" enctype="multipart/form-data" id="upload">
                             <div class="titleWrap">
                                 <input type="text" placeholder="60자 이하로 제목을 입력해주세요" maxlength="60" id="title" name="title" required/>
-                                <input id="file" type="file" name="thumbnail"/>
-                                <input type="hidden" name="userNickName" value="ADMIN"/>
+                                <input id="file" type="file" name="thumbnail" required/>
                             </div>
                             <textarea id="context" name="context" placeholder="내용을 입력해주세요" required></textarea>
                             <div class="btnWrap">   
-                                <button type="submit">작성하기</button>
+                                <button id="submit" type="submit">작성하기</button>
                                 <button type="reset">다시 작성하기</button>
                             </div>
                         </form> 

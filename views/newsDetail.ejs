@@ -24,8 +24,10 @@
                     </div>
                     <div class="btn_wrap">
                         <% if (login) { %>
+                            <% if(login.role === "ADMIN") { %>
                             <a href="/media/update/<%- data.num %>">수정하기</a>
                             <a href="/dbdelete/<%- data.num %>">삭제하기</a>
+                            <% } %>
                         <% } %>
                         <a href="/media/news">목록으로</a>
                     </div>
