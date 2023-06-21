@@ -419,5 +419,23 @@ app.get("/logout",(req,res)=>{
 })
 app.get("/mypage", (req, res)=>{
     // 마이페이지
-    res.render("mypage.ejs", {login:req.user});
+    db.collection("board").find().sort({num:-1}).toArray((err,result)=>{
+        res.render("mypage.ejs", {login:req.user, data:result});
+    })
+})
+//체크박스 선택한 게시글들 지우는 처리
+app.get("/dbseldel",(req,res)=>{
+    //console.log(req.query.delOk)
+   //delOk안에있는 문자열 데이터들을 정수데이터로 변경
+   let changeNumber = [];
+   req.query.delOk.forEach((item,index)=>{
+        changeNumber[index] = Number(item); 
+        //반복문으로 해당 체크박스 value 값 갯수만큼 숫자로 변환후 배열에 대입
+   })
+
+   //변환된 게시글 번호 갯수들만큼 실제 데이터베이스에서 삭제처리 deleteMany()
+                                            //배열명에 있는 데이터랑 매칭되는 것들을 삭제
+   db.collection("board").deleteMany({num:{$in:changeNumber}},(err,result)=>{
+        res.redirect("/mypage"); //게시글 목록페이지로 요청
+   })
 })

@@ -424,6 +424,84 @@ th, td{
                             }
                         }
                     }
+                    // 마이페이지
+                    &.mypost_wrap {
+                        width: 100%;
+                        > form {
+                            width: 100%;
+                            .list {
+                                height: 40vh;
+                                overflow-y: scroll;
+                                > ul {
+                                    display: table-row-group;
+                                    width: 100%;
+                                    &.boardTop {
+                                        background-color: #CCC;
+                                        position: sticky;
+                                        top:0;
+                                        left: 0;
+                                        > li {
+                                            border-color: #000;
+                                            font-weight: 700;
+                                        }
+                                    }
+                                    &.boardMid {
+                                        border-color: #CCC;
+                                    }
+                                    > li {
+                                        text-align: center;
+                                        display: table-cell;
+                                        vertical-align: middle;
+                                        padding-top: 15px;
+                                        padding-bottom: 15px;
+                                        border-width: 0 0 1px 0;
+                                        border-style: solid;
+                                        border-color: #CCC;
+                                        letter-spacing: -1px;
+                                        font-size: 15px;
+                                        > a {
+                                            color: #000;
+                                            transition: all .5s;
+                                            &:hover {
+                                                color: #D35BF1;
+                                            }
+                                        }
+                                        &.chkbox {
+                                            width: 4%;
+                                        }
+                                        &.idx {
+                                            width: 4%;
+                                        }
+                                        &.title {
+                                            font-weight: 700;
+                                            word-break: break-word;
+                                            width: 45%;
+                                        }
+                                        &.author {
+                                            width: 4%;
+                                        }
+                                    }
+                                }
+                            }
+                            .boardBot {
+                                > button {
+                                    border: 2px solid #AAA;
+                                    background-color: #AAA;
+                                    display: inline-block;
+                                    font-size: 15px;
+                                    padding: 7px 15px;
+                                    font-weight: 700;
+                                    transition: all .5s;
+                                    color:#000;
+                                    &:hover {
+                                        border: 2px solid #000;
+                                        background-color: #0000;
+                                        cursor: pointer;
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }

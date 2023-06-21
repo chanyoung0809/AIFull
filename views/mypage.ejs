@@ -1,4 +1,4 @@
-<%- include("header", {title:"AI :: 참가기업 로그인", cssFiles:["login.css"], jsFiles:[ "header.js", "subMenu.js", "mGnb.js", "loginCheck.js"]}) %>
+<%- include("header", {title:"AI :: 참가기업 로그인", cssFiles:["login.css"], jsFiles:[ "header.js", "subMenu.js", "mGnb.js", "mypage.js"]}) %>
     <div id="container">
         <div class="subCont1">
             <div class="center">
@@ -8,11 +8,7 @@
                         <li><a href="/exhibitors/intro">참가안내</a></li>
                         <li><a href="/exhibitors/sponserships">스폰서쉽 프로그램</a></li>
                         <li class="on">
-                            <% if (login) { %>
-                                <a href="/mypage">마이페이지</a>
-                            <% } else { %>
-                                <a href="/login">마이페이지</a>
-                            <% } %> 
+                            <a href="/mypage">마이페이지</a>
                         </li>
                     </ul>
                 </div>
@@ -22,6 +18,44 @@
             <div class="center">
                 <div class="subContentsWrap">
                     <h3>마이페이지</h3>
+                    <% if (login) { %>
+                        <% if(login.role === "ADMIN"){%>
+                            <div class="mypost_wrap">
+                                <h4>게시물 관리</h4>
+                                <form id="board" action="/dbseldel" method="get">  
+                                    <div class="list">
+                                        <ul class="newsboard boardTop">
+                                            <li class="chkbox chkAll"><label for="selectToggle">전체선택/해제</label><input type="checkbox" id="selectToggle"></li>
+                                            <li class="idx">NO</li>
+                                            <li class="title">제목</li>
+                                            <li class="author">글쓴이</li>
+                                        </ul>
+                                        <% if(data.length > 0) { %>
+                                            <!-- 데이터베이스에 검색한 데이터값이 있을 때 -->
+                                            <% for(let i=0; i<data.length; i++) { %>
+                                                <ul class="newsboard boardMid">
+                                                    <!-- 체크박스항목을 다중체크해서 데이터를 보낼 때 name속성에 []붙여서 사용 (배열형식) -->
+                                                    <!-- value을 사용한 이유는 해당 게시글 번호값 데이터 전송하려고 사용 -->
+                                                    <li class="chkbox"><input type="checkbox" name="delOk[]" class="delOk" value="<%- data[i].num %>"></li>
+                                                    <li class="idx"><%- data[i].num %></li>
+                                                    <li><a href="/media/news/<%- data[i].num %>"><%- data[i].title %></a></li>
+                                                    <li><%- data[i].userNickName %></li>
+                                                </ul>
+                                            <% } %>
+                                        <% } else { %>
+                                             <!-- 데이터베이스에 검색한 데이터값이 없을 때 -->
+                                            <div>게시글이 없습니다.</div>
+                                        <% }%>
+                                    </div>
+                                    <div class="newsboard boardBot">
+                                        <button type="submit" id="selectDelete">선택삭제</button>
+                                    </div>
+                                </form>
+                            </div>
+                        <% } else { %>
+                            <div> 준비중입니다.</div>
+                        <% } %>    
+                    <% } %>
                 </div>
             </div>
         </div>

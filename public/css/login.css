@@ -431,6 +431,81 @@ th, td {
   left: 5px;
   top: 50px;
 }
+#container .subCont2 .center .subContentsWrap > div.mypost_wrap {
+  width: 100%;
+}
+#container .subCont2 .center .subContentsWrap > div.mypost_wrap > form {
+  width: 100%;
+}
+#container .subCont2 .center .subContentsWrap > div.mypost_wrap > form .list {
+  height: 40vh;
+  overflow-y: scroll;
+}
+#container .subCont2 .center .subContentsWrap > div.mypost_wrap > form .list > ul {
+  display: table-row-group;
+  width: 100%;
+}
+#container .subCont2 .center .subContentsWrap > div.mypost_wrap > form .list > ul.boardTop {
+  background-color: #CCC;
+  position: sticky;
+  top: 0;
+  left: 0;
+}
+#container .subCont2 .center .subContentsWrap > div.mypost_wrap > form .list > ul.boardTop > li {
+  border-color: #000;
+  font-weight: 700;
+}
+#container .subCont2 .center .subContentsWrap > div.mypost_wrap > form .list > ul.boardMid {
+  border-color: #CCC;
+}
+#container .subCont2 .center .subContentsWrap > div.mypost_wrap > form .list > ul > li {
+  text-align: center;
+  display: table-cell;
+  vertical-align: middle;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-width: 0 0 1px 0;
+  border-style: solid;
+  border-color: #CCC;
+  letter-spacing: -1px;
+  font-size: 15px;
+}
+#container .subCont2 .center .subContentsWrap > div.mypost_wrap > form .list > ul > li > a {
+  color: #000;
+  transition: all 0.5s;
+}
+#container .subCont2 .center .subContentsWrap > div.mypost_wrap > form .list > ul > li > a:hover {
+  color: #D35BF1;
+}
+#container .subCont2 .center .subContentsWrap > div.mypost_wrap > form .list > ul > li.chkbox {
+  width: 4%;
+}
+#container .subCont2 .center .subContentsWrap > div.mypost_wrap > form .list > ul > li.idx {
+  width: 4%;
+}
+#container .subCont2 .center .subContentsWrap > div.mypost_wrap > form .list > ul > li.title {
+  font-weight: 700;
+  word-break: break-word;
+  width: 45%;
+}
+#container .subCont2 .center .subContentsWrap > div.mypost_wrap > form .list > ul > li.author {
+  width: 4%;
+}
+#container .subCont2 .center .subContentsWrap > div.mypost_wrap > form .boardBot > button {
+  border: 2px solid #AAA;
+  background-color: #AAA;
+  display: inline-block;
+  font-size: 15px;
+  padding: 7px 15px;
+  font-weight: 700;
+  transition: all 0.5s;
+  color: #000;
+}
+#container .subCont2 .center .subContentsWrap > div.mypost_wrap > form .boardBot > button:hover {
+  border: 2px solid #000;
+  background-color: rgba(0, 0, 0, 0);
+  cursor: pointer;
+}
 
 #footer {
   display: flex;
