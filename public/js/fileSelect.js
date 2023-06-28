@@ -26,6 +26,7 @@ submitBtn.addEventListener("click", (e)=>{
         // console.log(`파일명은 ${fileName}, 길이는 ${fileLength}, .기호가 시작하는 순번 ${fileDots}, 최종적으로 추출되는 확장자 ${fileExt}, 확장자 있나요? ${fileCheck}`);
 
         if(fileCheck){ 
+            submitDate();
             upload.submit(); 
         } 
         else{
@@ -34,3 +35,14 @@ submitBtn.addEventListener("click", (e)=>{
         }
     }
 })
+const dateinput= document.querySelector("#date"); //글 작성일 삽입 위한 변수
+
+let submitDate = ()=>{ // 글 작성 날짜 삽입 위한 함수
+    let date = new Date(); // Date 생성
+    let year = date.getFullYear(); // 작성연도
+    let month = ("0" + (date.getMonth() + 1)).slice(-2); // 작성월(1~9 : 01~09 / 10~12 : 010~012, slice로 뒤부터 2글자 잘라냄)
+    let day = ("0" + date.getDate()).slice(-2); // 작성일(1~9 : 01~09 / 10~31 : 010~031, slice로 뒤부터 2글자 잘라냄)
+    let writeDate = year + "-" + month + "-" + day; // 최종 삽입할 작성연월일 (yyyy-mm-dd 형식)
+    
+    dateinput.value = writeDate; //작성일자 인풋 태그 값으로 작성일자 값 저장.
+}

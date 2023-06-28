@@ -164,7 +164,7 @@ const upload = multer({ storage: storage })
 app.post("/dbupload",upload.single("thumbnail"),(req,res)=>{
     db.collection("boardCount").findOne({id:"게시물갯수"},(err,countResult)=>{
         db.collection("board").insertOne({
-            
+            date:req.body.date,
             num:countResult.idx,
             title:req.body.title,
             userNickName:req.user.userNickName,
@@ -177,7 +177,7 @@ app.post("/dbupload",upload.single("thumbnail"),(req,res)=>{
         });
     });
 });
-
+// 뉴스 - 게시물 목록
 app.get("/media/news", (req, res)=>{
     db.collection("board").find().toArray((err,total)=>{
         let totalData = total.length;
