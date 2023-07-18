@@ -69,7 +69,9 @@ passport.use(new LocalStrategy({
 
 app.get("/", (req, res)=>{
     //메인페이지
-   res.render("index", {login:req.user});
+    db.collection("board").find().sort({num:-1}).limit(12).toArray((err,result)=>{
+        res.render("index", {login:req.user, data:result});
+    });  
 })
 app.get("/intro/overview", (req, res)=>{
     //서브페이지 1-1 전시회 안내 - 행사개요
@@ -222,7 +224,8 @@ app.get("/media/news", (req, res)=>{
                 blockNum:blockNum, // 보고있는 페이지 번호가 몇 번 블록(그룹번호)에 있는지 확인
                 totalBlock:totalBlock, // 블록(그룹)의 총 갯수 -> 2개
                 pageNumber:pageNumber, // 현재 보고있는 페이지 값
-                login:req.user
+                login:req.user,
+                text:"",
             })
         })
     })
@@ -298,7 +301,8 @@ app.get("/search", (req,res)=>{
                 blockNum:blockNum, // 보고있는 페이지 번호가 몇 번 블록(그룹번호)에 있는지 확인
                 totalBlock:totalBlock, // 블록(그룹)의 총 갯수 -> 2개
                 pageNumber:pageNumber, // 현재 보고있는 페이지 값
-                login:req.user
+                login:req.user,
+                text:req.query.inputText
             })
         })
     })
@@ -363,7 +367,9 @@ app.get("/dbdelete/:num", (req,res)=>{
 
 app.get("/media/gallery", (req, res)=>{
     //서브페이지 4-2 미디어 - 갤러리
-   res.render("ai_9_gallery.ejs", {login:req.user});
+    db.collection("board").find().sort({num:-1}).limit(12).toArray((err,result)=>{
+        res.render("ai_9_gallery.ejs", {login:req.user, data:result});
+    })  
 })
 
 app.get("/sign-up", (req, res)=>{
@@ -431,11 +437,21 @@ app.get("/logout",(req,res)=>{
     })
     
 })
+// 어드민 전용 게시글 관리 페이지
 app.get("/mypage", (req, res)=>{
-    // 마이페이지
-    db.collection("board").find().sort({num:-1}).toArray((err,result)=>{
-        res.render("mypage.ejs", {login:req.user, data:result});
-    })
+    if(req.user){
+        if(req.user.role === "ADMIN"){
+            db.collection("board").find().sort({num:-1}).toArray((err,result)=>{
+                res.render("mypage.ejs", {login:req.user, data:result});
+            })
+        }
+        else {
+            res.send(`<script>alert("잘못된 접근입니다."); window.location.href="/"</script>`);
+        }
+    }
+    else {
+        res.send(`<script>alert("잘못된 접근입니다."); window.location.href="/"</script>`);
+    }
 })
 //체크박스 선택한 게시글들 지우는 처리
 app.get("/dbseldel",(req,res)=>{
@@ -446,7 +462,6 @@ app.get("/dbseldel",(req,res)=>{
         changeNumber[index] = Number(item); 
         //반복문으로 해당 체크박스 value 값 갯수만큼 숫자로 변환후 배열에 대입
    })
-
    //변환된 게시글 번호 갯수들만큼 실제 데이터베이스에서 삭제처리 deleteMany()
                                             //배열명에 있는 데이터랑 매칭되는 것들을 삭제
    db.collection("board").deleteMany({num:{$in:changeNumber}},(err,result)=>{

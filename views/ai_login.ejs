@@ -8,9 +8,7 @@
                         <li><a href="/exhibitors/intro">참가안내</a></li>
                         <li><a href="/exhibitors/sponserships">스폰서쉽 프로그램</a></li>
                         <li class="on">
-                            <% if (login) { %>
-                                <a href="/mypage">마이페이지</a>
-                            <% } else { %>
+                            <% if (!login) { %>
                                 <a href="/login">로그인</a>
                             <% } %> 
                         </li>
@@ -35,7 +33,7 @@
                                         <span class="ErrorMsg">입력하신 아이디나 비밀번호가 올바르지 않습니다!</span>
                                         <div>
                                             <button type="submit" class="loginBtn">로그인</button>
-                                            <button type="button">아이디/비밀번호 찾기</button>
+                                            <button type="button" id="adminAccountBtn">관리자 계정 불러오기</button>
                                         </div>
                                     </div>
                                 </form>

@@ -726,9 +726,28 @@ th, td{
             transition: all 1s;
             .closeBtnWrap {
                 display: flex;
-                justify-content: flex-end;
+                justify-content: space-between;
                 align-items: center;
                 height: 70px;
+                .logInOut {
+                    margin-left: 6%;
+                    > a {
+                        color: #000;
+                        border: 2px solid #000;
+                        display: block;
+                        padding: 10px 15px;
+                        background-color: #0000;
+                        border-radius: 25px;
+                        font-size: 13px;
+                        font-weight: 700;
+                        transition: all 0.5s;
+                        position: relative;
+                        &:hover {
+                            background-color: #0002;
+                        }
+                    }
+
+                }
                 .hbgMenu {
                     display: block;
                     margin-right: 20px;

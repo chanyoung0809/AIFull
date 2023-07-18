@@ -22,8 +22,6 @@ mGnbCloseBtn.onclick = ()=>{
     body.style.overflowY = 'unset';
 }
 
-
-
 const depth1Menu = document.querySelectorAll(".mGnb > li > a");
 // 1뎁스 메뉴이면서 클릭하면 열리고 닫힐 중메뉴들
 

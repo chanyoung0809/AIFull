@@ -678,13 +678,31 @@ th, td {
   }
   .mGnbBg .mGnbWrap .closeBtnWrap {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
     height: 70px;
   }
+  .mGnbBg .mGnbWrap .closeBtnWrap .logInOut {
+    margin-left: 6%;
+  }
+  .mGnbBg .mGnbWrap .closeBtnWrap .logInOut > a {
+    color: #000;
+    border: 2px solid #000;
+    display: block;
+    padding: 10px 15px;
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 25px;
+    font-size: 13px;
+    font-weight: 700;
+    transition: all 0.5s;
+    position: relative;
+  }
+  .mGnbBg .mGnbWrap .closeBtnWrap .logInOut > a:hover {
+    background-color: rgba(0, 0, 0, 0.1333333333);
+  }
   .mGnbBg .mGnbWrap .closeBtnWrap .hbgMenu {
     display: block;
-    margin-right: 50px;
+    margin-right: 20px;
     width: 50px;
     background-color: rgba(255, 255, 255, 0);
     border: 2px solid #333;
@@ -942,5 +960,8 @@ th, td {
   #container .subCont2 .center .subContentsWrap > div .memberWrap .loginWrap > form > div > div > button {
     padding: 1vw 4vw;
     font-size: 3.5vw;
+  }
+  #container .subCont2 .center .subContentsWrap > div.mypost_wrap > form .list > ul > li.title {
+    width: 13%;
   }
 }

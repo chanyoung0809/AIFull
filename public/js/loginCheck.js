@@ -1,7 +1,7 @@
 const idArea = document.querySelector("#userId");
-const pwArea = document.querySelector("#userPw");
+const pwArea = document.querySelector("#userPW");
 const errorMsg = document.querySelector("#container .subCont2 .center .subContentsWrap > div .memberWrap .loginWrap > form > div > span");
-
+// 정규식 통과하는지 우선 체크
 let idCheck = /^[\w]+@[a-z]+\.[a-z]{2,3}$/;
 let pwCheck = /^[\w\d^*!-]{8,13}$/;
 let loginForm = document.querySelector(".loginWrap > form");
@@ -19,3 +19,9 @@ loginForm.onsubmit=(e)=>{
         pwArea.style.outline="3px solid #c200f3";
     }
 };
+// 관리자 계정정보 자동완성
+const adminAccountBtn = document.querySelector("#adminAccountBtn");
+adminAccountBtn.addEventListener('click', ()=>{
+    idArea.value = "admin1234@admin.com";
+    pwArea.value = "admin1234";
+});

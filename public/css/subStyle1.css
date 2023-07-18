@@ -507,6 +507,7 @@ td {
   font-size: 15px;
   line-height: 60px;
   font-weight: 400;
+  word-break: keep-all;
 }
 #container .subCont2 .center .subContentsWrap > div > table > tbody > tr > td:first-child {
   width: 15% !important;
@@ -817,9 +818,27 @@ td {
   }
   .mGnbBg .mGnbWrap .closeBtnWrap {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
     height: 70px;
+  }
+  .mGnbBg .mGnbWrap .closeBtnWrap .logInOut {
+    margin-left: 6%;
+  }
+  .mGnbBg .mGnbWrap .closeBtnWrap .logInOut > a {
+    color: #000;
+    border: 2px solid #000;
+    display: block;
+    padding: 10px 15px;
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 25px;
+    font-size: 13px;
+    font-weight: 700;
+    transition: all 0.5s;
+    position: relative;
+  }
+  .mGnbBg .mGnbWrap .closeBtnWrap .logInOut > a:hover {
+    background-color: rgba(0, 0, 0, 0.1333333333);
   }
   .mGnbBg .mGnbWrap .closeBtnWrap .hbgMenu {
     display: block;
