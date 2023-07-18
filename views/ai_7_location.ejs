@@ -1,4 +1,4 @@
-<%- include("header", {title:"AI :: 참관객 :: 온라인 사전등록", cssFiles:["subStyle3.css"], jsFiles:[ "header.js", "subMenu.js", "mGnb.js"]}) %>
+<%- include("header", {title:"AI :: 참관객 :: 온라인 사전등록", cssFiles:["subStyle3.css"], jsFiles:[ "header.js", "subMenu.js", "mGnb.js", "region.js"]}) %>
     <div id="container">
         <div class="subCont1">
             <div class="center">
@@ -16,9 +16,7 @@
             <div class="center">
                 <div class="subContentsWrap">
                     <h3>오시는 길</h3>
-                    <div>
-                    <!-- 카카오맵 들어갈 자리-->
-                    </div>
+                    <div class="map" id="map"></div>
                 </div>
             </div>
         </div>

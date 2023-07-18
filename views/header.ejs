@@ -26,6 +26,8 @@
             <link rel="stylesheet" href="/css/<%- css %>">
        <% }) %>
     <% } %>
+    <!-- 카카오맵 API -->
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=6417ccb3aa69ebc3753534244ca03f2e"></script>
     <%# 전달받은 데이터값의 경우가 0과 같지 않을 때 실행할 조건식 %>
     <%# 보내준 jsFile를 누락했을 때까지 고려해서 조건문 %>
     <% if (jsFiles.length !== 0) { %>

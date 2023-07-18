@@ -446,11 +446,32 @@ app.get("/mypage", (req, res)=>{
             })
         }
         else {
-            res.send(`<script>alert("잘못된 접근입니다."); window.location.href="/"</script>`);
-        }
+            res.send(`
+            <script>
+                alert("잘못된 접근입니다.");
+                if (document.referrer == "" || document.referrer.includes('mypage')) {
+                    window.location.href = "/";
+                } 
+                else {
+                    window.location.href = document.referrer;
+                }             
+            </script>
+            `);
+            }
     }
     else {
-        res.send(`<script>alert("잘못된 접근입니다."); window.location.href="/"</script>`);
+        res.send(`
+        <script>
+            alert("잘못된 접근입니다.");
+            if (document.referrer == "" || document.referrer.includes('mypage')) {
+                window.location.href = "/";
+            } 
+            else {
+                window.location.href = document.referrer;
+            }             
+        </script>
+        `);
+        
     }
 })
 //체크박스 선택한 게시글들 지우는 처리
