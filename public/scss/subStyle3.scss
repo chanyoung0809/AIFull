@@ -529,6 +529,70 @@ th, td{
                             }
                         }
                     }
+                    &#map {
+                        width:100%;
+                        height: 30vh;
+                        .infowindow {
+                            font-size: calc(13px + .1vw);
+                            font-weight: 500;
+                            padding:.5em 2em; 
+                            display:flex; 
+                            flex-direction:column; 
+                            align-items:center;
+                        }
+                    }
+                    &.map_ctrl {
+                        width: 100%;
+                        display: flex;
+                        justify-content: flex-start;
+                        align-items: center;
+                        padding:1% 0;
+                        .btns {
+                            margin-right: 1em;
+                            > input {
+                                display: none;
+                            }
+                            > input:checked {
+                                display: none;
+                            }
+                            > input~label {
+                                background-color: #1155FE;
+                                border-radius: .2em;
+                                display: inline-block;
+                                font-size: calc(13px + .4vw);
+                                font-weight: 500;
+                                color:#F0F0F0;
+                                padding: .5em .1em;
+                            }
+                            > input:checked~label {
+                                background-color: #151515;
+                                border-radius: .2em;
+                                display: inline-block;
+                                font-size: calc(13px + .4vw);
+                                font-weight: 500;
+                                color:#F0F0F0;
+                                padding: .5em .1em;
+                            }
+                        }
+                        > a {
+                            background-color: #1155FE;
+                            border-radius: .2em;
+                            display: inline-block;
+                            font-size: calc(13px + .4vw);
+                            font-weight: 500;
+                            color:#F0F0F0;
+                            padding: .5em .1em;
+                            &:hover {
+                                background-color: #151515;
+                                border-radius: .2em;
+                                display: inline-block;
+                                font-size: calc(13px + .4vw);
+                                font-weight: 500;
+                                color:#F0F0F0;
+                                padding: .5em .1em;
+                            }
+                        }
+                    }
                 }
             }
         }

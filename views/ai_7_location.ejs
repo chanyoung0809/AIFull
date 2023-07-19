@@ -17,6 +17,17 @@
                 <div class="subContentsWrap">
                     <h3>오시는 길</h3>
                     <div class="map" id="map"></div>
+                    <div class="map_ctrl">
+                        <div class="btns">
+                            <input type="checkbox" id="roadviewToggle" onclick="setOverlayMapTypeId()" checked>
+                            <label for="roadviewToggle" id="roadviewText">로드뷰 숨기기</label>
+                        </div>
+                        <div class="btns">
+                            <input type="checkbox" id="trafficToggle" onclick="setOverlayMapTypeId()" checked>
+                            <label for="trafficToggle" id="trafficText">교통정보 숨기기</label>
+                        </div>
+                        <a href="https://map.kakao.com/link/to/코엑스 D홀,37.5116828,127.059151" target="_blank">길찾기</a>         
+                    </div>
                 </div>
             </div>
         </div>

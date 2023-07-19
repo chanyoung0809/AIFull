@@ -526,6 +526,70 @@ th, td {
 #container .subCont2 .center .subContentsWrap > div .enterWrap .enterBox > p > span {
   color: #888;
 }
+#container .subCont2 .center .subContentsWrap > div#map {
+  width: 100%;
+  height: 30vh;
+}
+#container .subCont2 .center .subContentsWrap > div#map .infowindow {
+  font-size: calc(13px + 0.1vw);
+  font-weight: 500;
+  padding: 0.5em 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#container .subCont2 .center .subContentsWrap > div.map_ctrl {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 1% 0;
+}
+#container .subCont2 .center .subContentsWrap > div.map_ctrl .btns {
+  margin-right: 1em;
+}
+#container .subCont2 .center .subContentsWrap > div.map_ctrl .btns > input {
+  display: none;
+}
+#container .subCont2 .center .subContentsWrap > div.map_ctrl .btns > input:checked {
+  display: none;
+}
+#container .subCont2 .center .subContentsWrap > div.map_ctrl .btns > input ~ label {
+  background-color: #1155FE;
+  border-radius: 0.2em;
+  display: inline-block;
+  font-size: calc(13px + 0.4vw);
+  font-weight: 500;
+  color: #F0F0F0;
+  padding: 0.5em 0.1em;
+}
+#container .subCont2 .center .subContentsWrap > div.map_ctrl .btns > input:checked ~ label {
+  background-color: #151515;
+  border-radius: 0.2em;
+  display: inline-block;
+  font-size: calc(13px + 0.4vw);
+  font-weight: 500;
+  color: #F0F0F0;
+  padding: 0.5em 0.1em;
+}
+#container .subCont2 .center .subContentsWrap > div.map_ctrl > a {
+  background-color: #1155FE;
+  border-radius: 0.2em;
+  display: inline-block;
+  font-size: calc(13px + 0.4vw);
+  font-weight: 500;
+  color: #F0F0F0;
+  padding: 0.5em 0.1em;
+}
+#container .subCont2 .center .subContentsWrap > div.map_ctrl > a:hover {
+  background-color: #151515;
+  border-radius: 0.2em;
+  display: inline-block;
+  font-size: calc(13px + 0.4vw);
+  font-weight: 500;
+  color: #F0F0F0;
+  padding: 0.5em 0.1em;
+}
 
 #footer {
   display: flex;
